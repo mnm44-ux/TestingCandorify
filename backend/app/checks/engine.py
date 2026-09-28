@@ -147,11 +147,60 @@ def check_total(lines: list[LineView], stated_total: float) -> list[Finding]:
     return []
 
 
-def run_checks(lines: list[LineView], stated_total: float = 0.0) -> list[Finding]:
-    """Run all detectors and return the combined list of findings."""
+# A charge above this multiple of the Medicare reference rate is surfaced for
+# review. Set conservatively — Medicare rates are far below commercial/self-pay
+# prices by design, so only notably high multiples are worth flagging.
+BENCHMARK_RATIO_THRESHOLD = 5.0
+
+
+def check_benchmark(lines: list[LineView], benchmark_service) -> list[Finding]:
+    """Compare each line's unit price to a Medicare reference rate.
+
+    ``benchmark_service`` is any object exposing ``compare(code, unit_price)``
+    that returns an object with ``ratio``, ``medicare_rate`` and ``note``.
+    Only lines above ``BENCHMARK_RATIO_THRESHOLD`` produce a finding. This is a
+    paid feature, so it is only invoked when a service is supplied.
+    """
+    findings: list[Finding] = []
+    if benchmark_service is None:
+        return findings
+    for ln in lines:
+        result = benchmark_service.compare(ln.code, ln.unit_price)
+        if result.ratio is not None and result.ratio >= BENCHMARK_RATIO_THRESHOLD:
+            findings.append(
+                Finding(
+                    kind="benchmark",
+                    severity="review",
+                    message=(
+                        f"Potential discrepancy to review: on line {ln.position + 1} "
+                        f"({ln.code} — {ln.description}), the charged unit price of "
+                        f"${ln.unit_price:,.2f} is about {result.ratio:g}x the "
+                        f"reference Medicare allowed amount of "
+                        f"${result.medicare_rate:,.2f}. Medicare rates differ from "
+                        f"commercial and self-pay prices by design — this is context "
+                        f"for your review, not a confirmed overcharge."
+                    ),
+                    line_positions=[ln.position],
+                    line_item_ids=[ln.id] if ln.id is not None else [],
+                )
+            )
+    return findings
+
+
+def run_checks(
+    lines: list[LineView],
+    stated_total: float = 0.0,
+    benchmark_service=None,
+) -> list[Finding]:
+    """Run all detectors and return the combined list of findings.
+
+    ``benchmark_service`` is optional (paid feature): when provided, Medicare
+    price-comparison findings are included.
+    """
     findings: list[Finding] = []
     findings += check_duplicates(lines)
     findings += check_arithmetic(lines)
     findings += check_quantities(lines)
     findings += check_total(lines, stated_total)
+    findings += check_benchmark(lines, benchmark_service)
     return findings

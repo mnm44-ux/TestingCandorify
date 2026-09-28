@@ -22,7 +22,7 @@ def payment_config() -> dict:
         "paid_features": [
             "Line-by-line plain-English translation of every charge",
             "Translation into other languages",
-            "Comparison against public Medicare rates (coming soon)",
+            "Comparison against public Medicare rates",
             "Draft dispute letters / templates",
         ],
     }

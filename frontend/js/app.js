@@ -142,14 +142,17 @@
           <div class="spacer"></div>
           <select id="translate-lang" class="hidden" style="width:auto"></select>
           <button class="btn ghost sm" id="btn-translate">🌐 Translate each line</button>
+          <button class="btn ghost sm" id="btn-benchmark">📊 Compare to Medicare</button>
         </div>
         <p class="notice">These are <strong>possible</strong> issues for you to confirm or dismiss. Candorify never confirms an error.</p>
         <div id="flags-list">${flags}</div>
         <div id="translations"></div>
+        <div id="benchmarks"></div>
       </div>`;
 
     $("#btn-delete-bill").onclick = () => deleteCurrentBill(bill.id);
     $("#btn-translate").onclick = () => translateLines(bill.id);
+    $("#btn-benchmark").onclick = () => benchmarkLines(bill.id);
     wireFlagButtons(bill);
     populateLangSelect($("#translate-lang"));
   }
@@ -218,6 +221,35 @@
     } catch (err) {
       out.innerHTML = "";
       if (err.status === 402) { toast("Paid feature — upgrade to unlock translation.", true); showView("pricing"); }
+      else toast(err.message, true);
+    }
+  }
+
+  async function benchmarkLines(billId) {
+    if (!isPaid()) { toast("Medicare comparison is a paid feature.", true); showView("pricing"); return; }
+    const out = $("#benchmarks");
+    out.innerHTML = `<p class="loading">Comparing to Medicare reference rates…</p>`;
+    try {
+      const res = await API.benchmarkBill(billId);
+      const rows = res.lines.map(l => {
+        const rate = l.medicare_rate == null ? "—" : money(l.medicare_rate);
+        const ratio = l.ratio == null ? "—" : (l.ratio + "×");
+        const high = l.ratio != null && l.ratio >= 5;
+        return `<tr class="${high ? "flagged" : ""}">
+          <td>${l.position + 1}</td><td><strong>${esc(l.code)}</strong></td>
+          <td>${esc(l.description)}</td>
+          <td class="num">${money(l.charged_unit_price)}</td>
+          <td class="num">${rate}</td>
+          <td class="num">${ratio}</td></tr>`;
+      }).join("");
+      out.innerHTML = `<h3>Medicare price comparison</h3>
+        <p class="notice">${esc(res.disclaimer)}</p>
+        <table><thead><tr><th>#</th><th>Code</th><th>Description</th>
+          <th class="num">Charged</th><th class="num">Medicare ref</th><th class="num">Ratio</th></tr></thead>
+          <tbody>${rows}</tbody></table>`;
+    } catch (err) {
+      out.innerHTML = "";
+      if (err.status === 402) { toast("Paid feature — upgrade to unlock Medicare comparison.", true); showView("pricing"); }
       else toast(err.message, true);
     }
   }

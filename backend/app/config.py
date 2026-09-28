@@ -75,6 +75,14 @@ class Settings(BaseSettings):
     # Defaults to True so the prototype works in sandboxed/offline environments.
     translation_offline_only: bool = True
 
+    # Medicare price benchmark (CMS Physician Fee Schedule)
+    cms_base_url: str = "https://data.cms.gov/data-api/v1/dataset"
+    cms_code_field: str = "HCPCS_Code"
+    cms_rate_field: str = "Non_Facility_Fee_Schedule_Amount"
+    # When True, never call CMS; use bundled offline rates. Defaults True so the
+    # prototype works offline.
+    benchmark_offline_only: bool = True
+
     # Payments (Stripe test mode)
     stripe_secret_key: str = ""       # sk_test_...
     stripe_publishable_key: str = ""  # pk_test_...
