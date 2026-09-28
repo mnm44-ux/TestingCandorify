@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candorify — Read your medical bills before you pay</title>
+  <meta name="description" content="Candorify helps patients review itemized medical bills for potential discrepancies before paying." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site">
+    <div class="container bar">
+      <div class="brand"><span class="dot"></span> Candorify</div>
+      <nav class="top">
+        <button data-view="home" class="active">Home</button>
+        <button data-view="review">Review a bill</button>
+        <button data-view="lookup">Code lookup</button>
+        <button data-view="templates">Templates</button>
+        <button data-view="pricing">Pricing</button>
+        <button data-view="accuracy">Accuracy</button>
+        <span id="auth-area" class="row"></span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HOME -->
+    <section id="view-home" class="view active">
+      <div class="hero">
+        <h1>Read your medical bills<br/>before you pay.</h1>
+        <p class="lead">U.S. medical bills are vague by design. Candorify surfaces <strong>potential discrepancies to review</strong> — duplicate charges, arithmetic slips, and odd quantities — and translates confusing billing codes into plain English.</p>
+        <div class="row" style="margin-top:22px">
+          <button class="btn primary" data-goto="review">Review a synthetic bill</button>
+          <button class="btn ghost" data-goto="pricing">See pricing</button>
+        </div>
+      </div>
+
+      <div class="grid cols-3">
+        <div class="card"><h2>🔍 Check engine</h2><p class="muted">Detects duplicate lines, arithmetic errors, unusual quantities, and total mismatches. Every finding is a possibility for <em>you</em> to confirm — never an automatic verdict.</p></div>
+        <div class="card"><h2>🌐 Translation</h2><p class="muted">Turns CPT/HCPCS codes into plain English, and into other languages. Powered by NLM Clinical Tables with an offline fallback.</p></div>
+        <div class="card"><h2>✉️ Templates</h2><p class="muted">Editable letters to request an itemized bill or to ask a provider to review specific charges.</p></div>
+      </div>
+
+      <div class="card" style="margin-top:20px">
+        <h2>How we differ from an auditor</h2>
+        <p class="muted">Candorify covers what auditors can't profitably touch. If reviewing your bill helps you catch a $60 questionable charge, that's cheaper and faster than hiring a professional — while still leaving the final call to you, your provider, and your insurer.</p>
+      </div>
+
+      <div class="disclaimer" style="margin-top:20px">
+        <strong>Important:</strong> <span class="disclaimer-text">Loading disclaimer…</span>
+      </div>
+    </section>
+
+    <!-- REVIEW -->
+    <section id="view-review" class="view">
+      <div class="card">
+        <h2>Review a bill</h2>
+        <p class="notice">The prototype uses <strong>synthetic bills only</strong>. Generate one below with optional injected errors, then review the potential discrepancies.</p>
+        <div class="row">
+          <div><label>Number of line items</label><input id="gen-lines" type="number" min="3" max="40" value="8" style="width:120px" /></div>
+          <div class="row" style="margin-top:26px"><input id="gen-inject" type="checkbox" checked style="width:auto" /> <label style="margin:0">Inject synthetic errors</label></div>
+          <div class="spacer"></div>
+          <button class="btn primary" id="btn-generate" style="margin-top:20px">Generate synthetic bill</button>
+        </div>
+      </div>
+      <div id="bill-detail" style="margin-top:18px"><p class="muted">No bill yet. Generate one to get started.</p></div>
+    </section>
+
+    <!-- CODE LOOKUP -->
+    <section id="view-lookup" class="view">
+      <div class="card">
+        <h2>Billing code lookup</h2>
+        <p class="muted">Translate a single billing code into plain English (and another language). Free to try.</p>
+        <form id="tc-form">
+          <div class="grid cols-3">
+            <div><label>Code</label><input id="tc-code" value="85025" placeholder="e.g. 85025" /></div>
+            <div><label>Code system</label><select id="tc-system"><option>CPT</option><option>HCPCS</option><option>ICD</option></select></div>
+            <div><label>Translate to</label><select id="tc-lang"></select></div>
+          </div>
+          <button class="btn primary" type="submit" style="margin-top:14px">Translate code</button>
+        </form>
+        <div id="tc-result"></div>
+      </div>
+    </section>
+
+    <!-- TEMPLATES -->
+    <section id="view-templates" class="view">
+      <div class="grid cols-2">
+        <div class="card">
+          <h2>Letter details</h2>
+          <label>Provider name</label><input id="tpl-provider" placeholder="Example Regional Medical Center" />
+          <label>Your name</label><input id="tpl-patient" placeholder="Alex Sample" />
+          <label>Account number</label><input id="tpl-account" placeholder="ACCT-000123" />
+          <label>Service date</label><input id="tpl-date" placeholder="2026-05-14" />
+          <label>Your contact (email/phone)</label><input id="tpl-contact" placeholder="alex@example.com" />
+          <hr style="border-color:var(--border);margin:18px 0" />
+          <p class="notice">For a dispute letter (paid), add one charge to ask about:</p>
+          <label>Charge code</label><input id="tpl-item-code" placeholder="85025" />
+          <label>Charge description</label><input id="tpl-item-desc" placeholder="Complete blood count" />
+          <label>Your question / note</label><input id="tpl-item-note" placeholder="This appears twice — please confirm" />
+          <div class="row" style="margin-top:16px">
+            <button class="btn ghost" id="btn-tpl-request">Request itemized bill (free)</button>
+            <button class="btn primary" id="btn-tpl-dispute">Draft dispute letter 🔒</button>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Editable letter</h2>
+          <label>Subject</label><input id="tpl-subject" placeholder="Generated subject appears here" />
+          <label>Body</label><textarea id="tpl-body" placeholder="Generated letter appears here — edit freely before sending."></textarea>
+          <p class="notice">Copy this into your email or print it. Candorify never sends anything on your behalf.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="view-pricing" class="view">
+      <div class="grid cols-2">
+        <div class="card">
+          <span class="pill free">FREE</span>
+          <div class="price">$0<small> / forever</small></div>
+          <ul class="features">
+            <li>Request an itemized bill (template)</li>
+            <li>Duplicate charge checks</li>
+            <li>Arithmetic & quantity checks</li>
+            <li>Single code lookup</li>
+          </ul>
+          <button class="btn ghost" data-goto="review">Start free</button>
+        </div>
+        <div class="card" style="border-color:var(--brand)">
+          <span class="pill paid">PAID</span>
+          <div class="price">$9<small> / month (test)</small></div>
+          <ul class="features" id="paid-features"><li>Loading…</li></ul>
+          <button class="btn primary" id="btn-upgrade">Upgrade to paid</button>
+          <p class="notice" id="pay-mode-note" style="margin-top:10px"></p>
+          <p class="notice">💳 Card details are entered securely via Stripe — Candorify never sees or stores your card number.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCURACY -->
+    <section id="view-accuracy" class="view">
+      <div class="card">
+        <h2>Accuracy, measured honestly</h2>
+        <p class="muted">Candorify injects labeled errors into synthetic bills and scores the check engine against the answer key. Goal: <strong>≥95% recall</strong> with a <strong>&lt;5% false-positive rate</strong>. Because Candorify never auto-concludes, you always confirm or dismiss each flag.</p>
+        <button class="btn primary" id="btn-run-accuracy">Run accuracy test</button>
+        <div id="accuracy-result"></div>
+      </div>
+    </section>
+
+    <!-- AUTH -->
+    <section id="view-auth" class="view">
+      <div class="card" style="max-width:460px;margin:0 auto">
+        <h2>Log in or sign up</h2>
+        <div class="row">
+          <label style="margin:0"><input type="radio" name="authmode" id="auth-mode-login" checked style="width:auto"> Log in</label>
+          <label style="margin:0"><input type="radio" name="authmode" id="auth-mode-register" style="width:auto"> Sign up</label>
+        </div>
+        <form id="auth-form">
+          <label>Email</label><input id="auth-email" type="email" required placeholder="you@example.com" />
+          <label>Password</label><input id="auth-password" type="password" required minlength="6" placeholder="••••••" />
+          <label>Preferred language</label><select id="auth-lang"></select>
+          <button class="btn primary" type="submit" style="margin-top:16px;width:100%">Continue</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ACCOUNT -->
+    <section id="view-account" class="view">
+      <div class="card" style="max-width:640px;margin:0 auto">
+        <h2>Your account</h2>
+        <div id="account-detail"><p class="muted">Loading…</p></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site">
+    <div class="container">
+      <p class="disclaimer-text">Loading disclaimer…</p>
+      <p>© 2026 Candorify · Prototype · Synthetic data only.</p>
+    </div>
+  </footer>
+
+  <div id="toast"></div>
+
+  <script>window.CANDORIFY_API_BASE = "";</script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

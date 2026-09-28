@@ -1,0 +1,26 @@
+{
+  "name": "candorify-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Candorify cross-platform mobile app (iOS + Android) via Capacitor, reusing the web frontend.",
+  "scripts": {
+    "sync-web": "node scripts/sync-web.js",
+    "build": "npm run sync-web",
+    "add:android": "npx cap add android",
+    "add:ios": "npx cap add ios",
+    "sync": "npm run sync-web && npx cap sync",
+    "open:android": "npx cap open android",
+    "open:ios": "npx cap open ios",
+    "run:android": "npm run sync && npx cap run android",
+    "run:ios": "npm run sync && npx cap run ios"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/app": "^6.0.1",
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/ios": "^6.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2"
+  }
+}

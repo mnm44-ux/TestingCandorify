@@ -1,0 +1,204 @@
+bill_id,error_kind,line_positions,detail
+1,arithmetic,6,Line 6: line total 2162.98 does not equal quantity 1.0 x unit price 2077.21.
+1,duplicate,5 8,Line 8 duplicates line 5 (code 96372).
+1,arithmetic,2,Line 2: line total 166.69 does not equal quantity 1.0 x unit price 24.21.
+1,total_mismatch,,Stated total 4204.19 does not equal the sum of line totals 4109.35.
+2,duplicate,4 8,Line 8 duplicates line 4 (code 99213).
+2,arithmetic,5,Line 5: line total 788.17 does not equal quantity 1.0 x unit price 751.36.
+2,quantity,1,Line 1: unusually high quantity 18.0 for code Q9967.
+3,duplicate,7 8,Line 8 duplicates line 7 (code 72148).
+3,duplicate,1 9,Line 9 duplicates line 1 (code 12001).
+3,duplicate,5 10,Line 10 duplicates line 5 (code 96372).
+3,total_mismatch,,Stated total 4308.62 does not equal the sum of line totals 4116.78.
+4,duplicate,6 8,Line 8 duplicates line 6 (code 99284).
+4,duplicate,7 9,Line 9 duplicates line 7 (code 72148).
+4,duplicate,3 10,Line 10 duplicates line 3 (code 12001).
+4,total_mismatch,,Stated total 5001.72 does not equal the sum of line totals 4803.38.
+5,arithmetic,1,Line 1: line total 178.41 does not equal quantity 1.0 x unit price 45.12.
+5,duplicate,3 8,Line 8 duplicates line 3 (code 80048).
+5,duplicate,4 9,Line 9 duplicates line 4 (code 81001).
+6,quantity,3,Line 3: unusually high quantity 7.0 for code J2405.
+6,quantity,1,Line 1: unusually high quantity 13.0 for code 81001.
+6,quantity,2,Line 2: unusually high quantity 8.0 for code 85025.
+6,total_mismatch,,Stated total 2238.12 does not equal the sum of line totals 2130.07.
+7,duplicate,0 8,Line 8 duplicates line 0 (code A9150).
+7,duplicate,6 9,Line 9 duplicates line 6 (code 96372).
+7,arithmetic,4,Line 4: line total 1491.18 does not equal quantity 1.0 x unit price 1419.88.
+7,total_mismatch,,Stated total 2218.13 does not equal the sum of line totals 2167.03.
+8,duplicate,3 8,Line 8 duplicates line 3 (code 99285).
+8,duplicate,6 9,Line 9 duplicates line 6 (code J1885).
+8,arithmetic,5,Line 5: line total 274.73 does not equal quantity 1.0 x unit price 134.33.
+8,total_mismatch,,Stated total 4347.09 does not equal the sum of line totals 4315.95.
+9,arithmetic,1,Line 1: line total 1042.94 does not equal quantity 1.0 x unit price 961.7.
+9,arithmetic,7,Line 7: line total 78.13 does not equal quantity 1.0 x unit price 52.46.
+9,duplicate,3 8,Line 8 duplicates line 3 (code 72148).
+9,total_mismatch,,Stated total 7415.62 does not equal the sum of line totals 7261.64.
+10,quantity,2,Line 2: unusually high quantity 12.0 for code 36415.
+10,arithmetic,4,Line 4: line total 509.57 does not equal quantity 1.0 x unit price 479.95.
+10,quantity,5,Line 5: unusually high quantity 10.0 for code 74177.
+10,total_mismatch,,Stated total 13855.35 does not equal the sum of line totals 13791.58.
+11,quantity,1,Line 1: unusually high quantity 14.0 for code 99214.
+11,quantity,6,Line 6: unusually high quantity 11.0 for code Q9967.
+11,arithmetic,3,Line 3: line total 1500.92 does not equal quantity 1.0 x unit price 1430.97.
+12,arithmetic,1,Line 1: line total 73.58 does not equal quantity 1.0 x unit price 5.22.
+12,duplicate,4 8,Line 8 duplicates line 4 (code 85025).
+12,arithmetic,7,Line 7: line total 222.49 does not equal quantity 1.0 x unit price 88.36.
+13,arithmetic,4,Line 4: line total 296.05 does not equal quantity 1.0 x unit price 169.67.
+13,arithmetic,3,Line 3: line total 1065.99 does not equal quantity 1.0 x unit price 1039.12.
+13,quantity,6,Line 6: unusually high quantity 17.0 for code J1885.
+13,total_mismatch,,Stated total 4291.04 does not equal the sum of line totals 4097.92.
+14,quantity,5,Line 5: unusually high quantity 10.0 for code 99284.
+14,duplicate,0 8,Line 8 duplicates line 0 (code 96372).
+14,quantity,3,Line 3: unusually high quantity 13.0 for code J1885.
+15,quantity,4,Line 4: unusually high quantity 11.0 for code 99284.
+15,quantity,1,Line 1: unusually high quantity 12.0 for code 80053.
+15,arithmetic,3,Line 3: line total 112.86 does not equal quantity 1.0 x unit price 23.56.
+16,duplicate,1 8,Line 8 duplicates line 1 (code 99285).
+16,duplicate,7 9,Line 9 duplicates line 7 (code 81001).
+16,arithmetic,3,Line 3: line total 301.49 does not equal quantity 1.0 x unit price 152.42.
+17,arithmetic,4,Line 4: line total 107.75 does not equal quantity 1.0 x unit price 53.2.
+17,arithmetic,0,Line 0: line total 47.4 does not equal quantity 1.0 x unit price 18.86.
+17,quantity,1,Line 1: unusually high quantity 15.0 for code J2405.
+18,arithmetic,7,Line 7: line total 158.57 does not equal quantity 1.0 x unit price 18.6.
+18,duplicate,3 8,Line 8 duplicates line 3 (code 99214).
+18,quantity,0,Line 0: unusually high quantity 13.0 for code 71046.
+18,total_mismatch,,Stated total 5257.61 does not equal the sum of line totals 5088.7.
+19,quantity,5,Line 5: unusually high quantity 17.0 for code 99284.
+19,quantity,1,Line 1: unusually high quantity 17.0 for code 81001.
+19,arithmetic,0,Line 0: line total 89.43 does not equal quantity 1.0 x unit price 14.3.
+20,quantity,0,Line 0: unusually high quantity 17.0 for code 80048.
+20,duplicate,2 8,Line 8 duplicates line 2 (code 96372).
+20,duplicate,1 9,Line 9 duplicates line 1 (code 99285).
+20,total_mismatch,,Stated total 4008.38 does not equal the sum of line totals 3885.59.
+21,arithmetic,2,Line 2: line total 189.02 does not equal quantity 1.0 x unit price 109.79.
+21,arithmetic,4,Line 4: line total 1255.29 does not equal quantity 1.0 x unit price 1119.2.
+21,duplicate,5 8,Line 8 duplicates line 5 (code 80053).
+22,arithmetic,4,Line 4: line total 240.29 does not equal quantity 1.0 x unit price 163.19.
+22,arithmetic,5,Line 5: line total 181.26 does not equal quantity 1.0 x unit price 34.95.
+22,duplicate,1 8,Line 8 duplicates line 1 (code 72148).
+23,duplicate,0 8,Line 8 duplicates line 0 (code 12001).
+23,arithmetic,1,Line 1: line total 125.86 does not equal quantity 1.0 x unit price 13.42.
+23,quantity,4,Line 4: unusually high quantity 15.0 for code 99285.
+23,total_mismatch,,Stated total 20119.05 does not equal the sum of line totals 20056.94.
+24,arithmetic,4,Line 4: line total 105.03 does not equal quantity 1.0 x unit price 17.14.
+24,arithmetic,3,Line 3: line total 97.47 does not equal quantity 1.0 x unit price 24.63.
+24,duplicate,2 8,Line 8 duplicates line 2 (code Q9967).
+25,arithmetic,6,Line 6: line total 1469.69 does not equal quantity 1.0 x unit price 1397.17.
+25,arithmetic,0,Line 0: line total 755.37 does not equal quantity 1.0 x unit price 654.89.
+25,duplicate,4 8,Line 8 duplicates line 4 (code 12001).
+26,quantity,3,Line 3: unusually high quantity 6.0 for code 36415.
+26,duplicate,0 8,Line 8 duplicates line 0 (code 99213).
+26,arithmetic,4,Line 4: line total 1484.27 does not equal quantity 1.0 x unit price 1382.9.
+27,quantity,1,Line 1: unusually high quantity 9.0 for code 96372.
+27,duplicate,0 8,Line 8 duplicates line 0 (code 80048).
+27,arithmetic,7,Line 7: line total 890.94 does not equal quantity 1.0 x unit price 783.06.
+28,quantity,2,Line 2: unusually high quantity 9.0 for code 81001.
+28,arithmetic,6,Line 6: line total 680.9 does not equal quantity 1.0 x unit price 555.31.
+28,arithmetic,0,Line 0: line total 1292.96 does not equal quantity 1.0 x unit price 1202.88.
+29,duplicate,7 8,Line 8 duplicates line 7 (code 93000).
+29,duplicate,1 9,Line 9 duplicates line 1 (code 99284).
+29,quantity,5,Line 5: unusually high quantity 15.0 for code 12001.
+30,arithmetic,4,Line 4: line total 505.82 does not equal quantity 1.0 x unit price 424.87.
+30,duplicate,7 8,Line 8 duplicates line 7 (code A9150).
+30,arithmetic,5,Line 5: line total 1815.81 does not equal quantity 1.0 x unit price 1764.63.
+31,duplicate,0 8,Line 8 duplicates line 0 (code 99214).
+31,quantity,5,Line 5: unusually high quantity 18.0 for code 96372.
+31,duplicate,6 9,Line 9 duplicates line 6 (code 70450).
+32,duplicate,5 8,Line 8 duplicates line 5 (code 74177).
+32,duplicate,7 9,Line 9 duplicates line 7 (code J1885).
+32,quantity,6,Line 6: unusually high quantity 16.0 for code 81001.
+33,duplicate,2 8,Line 8 duplicates line 2 (code 93000).
+33,duplicate,1 9,Line 9 duplicates line 1 (code A9150).
+33,arithmetic,0,Line 0: line total 306.86 does not equal quantity 1.0 x unit price 230.78.
+34,arithmetic,4,Line 4: line total 67.52 does not equal quantity 1.0 x unit price 13.98.
+34,quantity,1,Line 1: unusually high quantity 18.0 for code J2405.
+34,quantity,0,Line 0: unusually high quantity 5.0 for code 99213.
+35,duplicate,5 8,Line 8 duplicates line 5 (code J1885).
+35,duplicate,2 9,Line 9 duplicates line 2 (code 12001).
+35,quantity,6,Line 6: unusually high quantity 15.0 for code 99214.
+35,total_mismatch,,Stated total 8100.98 does not equal the sum of line totals 7909.83.
+36,duplicate,5 8,Line 8 duplicates line 5 (code Q9967).
+36,arithmetic,2,Line 2: line total 68.93 does not equal quantity 1.0 x unit price 31.14.
+36,duplicate,3 9,Line 9 duplicates line 3 (code 99213).
+37,arithmetic,7,Line 7: line total 1072.88 does not equal quantity 1.0 x unit price 970.38.
+37,arithmetic,3,Line 3: line total 850.29 does not equal quantity 1.0 x unit price 821.64.
+37,quantity,5,Line 5: unusually high quantity 11.0 for code J2405.
+37,total_mismatch,,Stated total 5812.89 does not equal the sum of line totals 5654.82.
+38,arithmetic,7,Line 7: line total 131.09 does not equal quantity 1.0 x unit price 28.85.
+38,quantity,5,Line 5: unusually high quantity 8.0 for code 36415.
+38,arithmetic,0,Line 0: line total 149.04 does not equal quantity 1.0 x unit price 4.5.
+39,quantity,3,Line 3: unusually high quantity 19.0 for code 99214.
+39,duplicate,6 8,Line 8 duplicates line 6 (code 12001).
+39,quantity,4,Line 4: unusually high quantity 14.0 for code 36415.
+40,arithmetic,3,Line 3: line total 2029.42 does not equal quantity 1.0 x unit price 1918.27.
+40,duplicate,4 8,Line 8 duplicates line 4 (code 99213).
+40,arithmetic,7,Line 7: line total 1256.51 does not equal quantity 1.0 x unit price 1218.07.
+40,total_mismatch,,Stated total 4663.91 does not equal the sum of line totals 4567.46.
+41,arithmetic,5,Line 5: line total 884.47 does not equal quantity 1.0 x unit price 755.82.
+41,duplicate,0 8,Line 8 duplicates line 0 (code J2405).
+41,quantity,7,Line 7: unusually high quantity 8.0 for code 99285.
+41,total_mismatch,,Stated total 11570.13 does not equal the sum of line totals 11530.61.
+42,duplicate,4 8,Line 8 duplicates line 4 (code 99285).
+42,quantity,7,Line 7: unusually high quantity 10.0 for code 74177.
+42,duplicate,6 9,Line 9 duplicates line 6 (code 12001).
+42,total_mismatch,,Stated total 27441.81 does not equal the sum of line totals 27321.24.
+43,duplicate,0 8,Line 8 duplicates line 0 (code 74177).
+43,quantity,2,Line 2: unusually high quantity 13.0 for code 99284.
+43,arithmetic,7,Line 7: line total 226.9 does not equal quantity 1.0 x unit price 80.59.
+44,quantity,5,Line 5: unusually high quantity 6.0 for code 96372.
+44,arithmetic,3,Line 3: line total 62.33 does not equal quantity 1.0 x unit price 11.57.
+44,arithmetic,4,Line 4: line total 129.79 does not equal quantity 1.0 x unit price 18.44.
+45,arithmetic,5,Line 5: line total 77.69 does not equal quantity 1.0 x unit price 17.64.
+45,duplicate,0 8,Line 8 duplicates line 0 (code 99285).
+45,duplicate,4 9,Line 9 duplicates line 4 (code 70450).
+45,total_mismatch,,Stated total 6906.95 does not equal the sum of line totals 6772.65.
+46,arithmetic,3,Line 3: line total 103.6 does not equal quantity 1.0 x unit price 37.84.
+46,quantity,7,Line 7: unusually high quantity 17.0 for code 70450.
+46,duplicate,2 8,Line 8 duplicates line 2 (code 71046).
+47,duplicate,1 8,Line 8 duplicates line 1 (code 99285).
+47,quantity,4,Line 4: unusually high quantity 9.0 for code 72148.
+47,arithmetic,3,Line 3: line total 348.64 does not equal quantity 1.0 x unit price 278.13.
+47,total_mismatch,,Stated total 15100.16 does not equal the sum of line totals 15034.86.
+48,quantity,6,Line 6: unusually high quantity 8.0 for code 74177.
+48,arithmetic,7,Line 7: line total 102.09 does not equal quantity 1.0 x unit price 13.83.
+48,arithmetic,3,Line 3: line total 211.22 does not equal quantity 1.0 x unit price 114.95.
+48,total_mismatch,,Stated total 11581.68 does not equal the sum of line totals 11494.71.
+49,quantity,4,Line 4: unusually high quantity 13.0 for code J1885.
+49,duplicate,2 8,Line 8 duplicates line 2 (code 93000).
+49,arithmetic,7,Line 7: line total 311.62 does not equal quantity 1.0 x unit price 185.95.
+49,total_mismatch,,Stated total 1851.53 does not equal the sum of line totals 1681.14.
+50,arithmetic,5,Line 5: line total 104.12 does not equal quantity 1.0 x unit price 16.73.
+50,arithmetic,6,Line 6: line total 287.46 does not equal quantity 1.0 x unit price 240.16.
+50,quantity,7,Line 7: unusually high quantity 15.0 for code 99213.
+51,arithmetic,3,Line 3: line total 132.55 does not equal quantity 1.0 x unit price 29.25.
+51,arithmetic,5,Line 5: line total 81.96 does not equal quantity 1.0 x unit price 14.43.
+51,quantity,2,Line 2: unusually high quantity 17.0 for code 99214.
+52,duplicate,6 8,Line 8 duplicates line 6 (code 85025).
+52,arithmetic,2,Line 2: line total 94.81 does not equal quantity 1.0 x unit price 12.59.
+52,duplicate,5 9,Line 9 duplicates line 5 (code 71046).
+53,arithmetic,5,Line 5: line total 1295.37 does not equal quantity 1.0 x unit price 1215.67.
+53,duplicate,7 8,Line 8 duplicates line 7 (code 71046).
+53,duplicate,1 9,Line 9 duplicates line 1 (code 81001).
+54,duplicate,2 8,Line 8 duplicates line 2 (code 70450).
+54,arithmetic,3,Line 3: line total 135.04 does not equal quantity 1.0 x unit price 31.21.
+54,duplicate,4 9,Line 9 duplicates line 4 (code 12001).
+55,quantity,6,Line 6: unusually high quantity 17.0 for code 70450.
+55,arithmetic,3,Line 3: line total 332.42 does not equal quantity 1.0 x unit price 205.93.
+55,quantity,1,Line 1: unusually high quantity 18.0 for code 99284.
+56,duplicate,2 8,Line 8 duplicates line 2 (code 71046).
+56,duplicate,1 9,Line 9 duplicates line 1 (code 70450).
+56,arithmetic,5,Line 5: line total 120.99 does not equal quantity 1.0 x unit price 23.28.
+57,arithmetic,0,Line 0: line total 312.55 does not equal quantity 1.0 x unit price 270.23.
+57,quantity,7,Line 7: unusually high quantity 18.0 for code 12001.
+57,arithmetic,6,Line 6: line total 93.07 does not equal quantity 1.0 x unit price 16.56.
+58,arithmetic,5,Line 5: line total 241.62 does not equal quantity 1.0 x unit price 138.3.
+58,quantity,2,Line 2: unusually high quantity 12.0 for code 80048.
+58,arithmetic,3,Line 3: line total 153.73 does not equal quantity 1.0 x unit price 35.42.
+58,total_mismatch,,Stated total 2804.24 does not equal the sum of line totals 2626.1.
+59,duplicate,1 8,Line 8 duplicates line 1 (code 99214).
+59,arithmetic,5,Line 5: line total 555.3 does not equal quantity 1.0 x unit price 470.14.
+59,duplicate,6 9,Line 9 duplicates line 6 (code 99284).
+60,duplicate,7 8,Line 8 duplicates line 7 (code 71046).
+60,duplicate,2 9,Line 9 duplicates line 2 (code 85025).
+60,arithmetic,4,Line 4: line total 45.9 does not equal quantity 1.0 x unit price 8.81.
+60,total_mismatch,,Stated total 2276.06 does not equal the sum of line totals 2179.49.

@@ -1,0 +1,8 @@
+{
+  "appId": "com.candorify.app",
+  "appName": "Candorify",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}

@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Env / secrets
+.env
+*.local
+
+# Node / mobile
+node_modules/
+mobile/dist/
+mobile/.output/
+
+# OS
+.DS_Store
+Thumbs.db
+
+
+# Mobile Capacitor build/platform outputs
+mobile/www/
+mobile/android/
+mobile/ios/
+
+# Kiro config
+.kiro/
