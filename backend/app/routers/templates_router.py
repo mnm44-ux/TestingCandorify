@@ -30,7 +30,7 @@ def render(
             detail="Drafting dispute letters requires a Candorify paid subscription.",
         )
     try:
-        tmpl = render_template(payload.template, payload.context)
+        tmpl = render_template(payload.template, payload.context, use_ai=payload.use_ai)
     except KeyError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
     return TemplateResponse(template=tmpl.key, subject=tmpl.subject, body=tmpl.body)

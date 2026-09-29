@@ -19,7 +19,8 @@ commit them), then redeploy:
 
 | Purpose | Variable | Value |
 |---------|----------|-------|
-| Live code lookup + translation | `CANDORIFY_TRANSLATION_OFFLINE_ONLY` | `false` |
+| **AI (Gemini) for translation + email drafting** | `CANDORIFY_LLM_API_KEY` | your free Gemini key ([get one, no card](https://aistudio.google.com/app/apikey)) |
+| Fallback live code lookup + translation | `CANDORIFY_TRANSLATION_OFFLINE_ONLY` | `false` |
 | Live Medicare rates | `CANDORIFY_BENCHMARK_OFFLINE_ONLY` | `false` |
 | Real Stripe | `CANDORIFY_PAYMENTS_MOCK_MODE` | `false` |
 | Stripe secret key | `CANDORIFY_STRIPE_SECRET_KEY` | `sk_test_…` / `sk_live_…` |

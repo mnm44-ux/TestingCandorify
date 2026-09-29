@@ -65,8 +65,8 @@
 
     // Templates
     listTemplates: () => request("/api/templates"),
-    renderTemplate: (template, context) =>
-      request("/api/templates/render", { method: "POST", body: { template, context } }),
+    renderTemplate: (template, context, use_ai = false) =>
+      request("/api/templates/render", { method: "POST", body: { template, context, use_ai } }),
 
     // Payments
     paymentConfig: () => request("/api/payments/config", { auth: false }),

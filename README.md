@@ -17,7 +17,8 @@ Candorify helps patients review itemized medical bills, surfacing **potential di
 | Mobile app | `mobile/` | Cross-platform (Capacitor-wrapped web) |
 | Synthetic data | `backend/app/generator/` | Python + labeled answer keys |
 | Check engine | `backend/app/checks/` | Python |
-| Translation | `backend/app/translation/` | NLM Clinical Tables + LibreTranslate + offline fallback |
+| AI (Gemini) | `backend/app/llm/` | Google Gemini for translation + email drafting (optional, key-gated) |
+| Translation | `backend/app/translation/` | Gemini → NLM Clinical Tables + LibreTranslate → offline fallback |
 | Medicare benchmark | `backend/app/benchmark/` | CMS Physician Fee Schedule + offline fallback (paid) |
 | Templates | `backend/app/templates_engine/` | Python |
 | Payments | `backend/app/payments/` | Stripe (test mode) |
