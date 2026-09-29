@@ -54,6 +54,7 @@
     recheck: (id) => request("/api/bills/" + id + "/recheck", { method: "POST" }),
     updateFlag: (flagId, status) => request("/api/bills/flags/" + flagId, { method: "PATCH", body: { status } }),
     translateBill: (id, lang) => request("/api/bills/" + id + "/translate?target_language=" + encodeURIComponent(lang)),
+    benchmarkBill: (id) => request("/api/bills/" + id + "/benchmark"),
     deleteBill: (id) => request("/api/bills/" + id, { method: "DELETE" }),
     score: (numBills = 100) => request("/api/bills/score?num_bills=" + numBills, { method: "POST" }),
 

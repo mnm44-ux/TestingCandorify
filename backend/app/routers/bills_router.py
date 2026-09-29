@@ -199,6 +199,45 @@ def translate_bill_lines(
     return {"bill_id": bill.id, "target_language": target_language, "lines": out}
 
 
+@router.get("/{bill_id}/benchmark")
+def benchmark_bill(
+    bill_id: int,
+    db: Session = Depends(get_db),
+    user: User = Depends(require_paid),  # Medicare comparison is a paid feature
+) -> dict:
+    """Compare each line's unit price to a reference Medicare allowed amount.
+    Every result is context for review — never a confirmed overcharge."""
+    from ..benchmark import get_benchmark_service
+
+    bill = db.get(Bill, bill_id)
+    if not bill:
+        raise HTTPException(status_code=404, detail="Bill not found")
+    svc = get_benchmark_service()
+    lines = []
+    for li in bill.line_items:
+        r = svc.compare(li.code, li.unit_price)
+        lines.append({
+            "line_item_id": li.id,
+            "position": li.position,
+            "code": li.code,
+            "description": li.description,
+            "charged_unit_price": r.charged_unit_price,
+            "medicare_rate": r.medicare_rate,
+            "ratio": r.ratio,
+            "source": r.source,
+            "note": r.note,
+        })
+    return {
+        "bill_id": bill.id,
+        "disclaimer": (
+            "Medicare allowed amounts are a reference point only and differ from "
+            "commercial and self-pay prices by design. Nothing here is a confirmed "
+            "overcharge."
+        ),
+        "lines": lines,
+    }
+
+
 @router.delete("/{bill_id}")
 def delete_bill(bill_id: int, db: Session = Depends(get_db)) -> dict:
     """One-tap deletion: removes the bill and all associated data immediately."""
