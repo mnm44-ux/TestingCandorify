@@ -1,0 +1,2784 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 5 /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R] >>
+endobj
+3 0 obj
+<< /Length 7532 >>
+stream
+BT
+/F2 20 Tf
+0.05 0.05 0.05 rg
+1 0 0 1 50.0 771.0 Tm
+(Candorify - Team Plan & Timeline \(Fall 2026\)) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 743.0 Tm
+(Read your medical bills before you pay.) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 728.0 Tm
+(This plan maps the Candorify product roadmap onto the YWCC Capstone Student) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 713.0 Tm
+(Startup Track sprint calendar. All dates are Eastern Time and taken from the) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 698.0 Tm
+(Fall 2026 guidebook.) Tj
+ET
+BT
+/F2 14 Tf
+0.12 0.12 0.12 rg
+1 0 0 1 50.0 671.0 Tm
+(Team & core roles) Tj
+ET
+0.120 0.120 0.120 rg
+50.0 634.5 495.0 16.5 re f
+0 0 0 rg
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 53.0 637.5 Tm
+(Person) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 218.0 637.5 Tm
+(Role) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 383.0 637.5 Tm
+(Owns) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 621.0 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 621.0 Tm
+(Founder / PM / Frontend) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 621.0 Tm
+(Product vision, sprint planning,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 610.5 Tm
+(all 5 PM reports, meeting &) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 600.0 Tm
+(decision log, frontend \(all) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 589.5 Tm
+(pages/UI\), GitHub cards,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 579.0 Tm
+(customer-discovery lead) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 538.5 495.0 37.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 562.5 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 562.5 Tm
+(Backend) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 562.5 Tm
+(FastAPI endpoints, feature logic,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 552.0 Tm
+(integrations \(Gemini / Stripe\), API) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 541.5 Tm
+(contracts) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 525.0 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 525.0 Tm
+(Database) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 525.0 Tm
+(Schema, migrations, data integrity,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 514.5 Tm
+(caching, retention/deletion,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 504.0 Tm
+(data-model docs) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 463.5 495.0 37.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 487.5 Tm
+(Mathew) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 487.5 Tm
+(Testing & Research) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 487.5 Tm
+(Test suites, accuracy measurement,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 477.0 Tm
+(QA, customer/competitor research,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 466.5 Tm
+(MDDDE "Evaluate" evidence) Tj
+ET
+BT
+/F1 10 Tf
+0.40 0.40 0.40 rg
+1 0 0 1 58.0 455.5 Tm
+(Everyone also does Scrum, attends coaching, and must be able to explain their own) Tj
+ET
+BT
+/F1 10 Tf
+0.40 0.40 0.40 rg
+1 0 0 1 58.0 442.5 Tm
+(contribution \(course requirement\).) Tj
+ET
+BT
+/F2 14 Tf
+0.12 0.12 0.12 rg
+1 0 0 1 50.0 415.5 Tm
+(Sprint calendar -> build mapping) Tj
+ET
+0.120 0.120 0.120 rg
+50.0 379.0 495.0 16.5 re f
+0 0 0 rg
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 53.0 382.0 Tm
+(Sprint) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 176.8 382.0 Tm
+(Dates) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 300.5 382.0 Tm
+(Capstone milestone) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 424.2 382.0 Tm
+(Candorify focus) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 365.5 Tm
+(S1) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 176.8 365.5 Tm
+(Sep 29 - Oct 12) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 365.5 Tm
+(Orientation; PM Report 1) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 355.0 Tm
+(\(Oct 8\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 365.5 Tm
+(Foundations: repo, DB,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 355.0 Tm
+(auth, Tauri setup, home) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 344.5 Tm
+(page) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 304.0 495.0 37.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 328.0 Tm
+(S2) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 176.8 328.0 Tm
+(Oct 13 - Oct 26) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 328.0 Tm
+(Progress review \(Oct 13\);) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 317.5 Tm
+(PM Report 2 \(Oct 22\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 328.0 Tm
+(Core features working:) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 317.5 Tm
+(code lookup, bill upload,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 307.0 Tm
+(logged-out marketing pages) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 290.5 Tm
+(S3) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 176.8 290.5 Tm
+(Oct 27 - Nov 9) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 290.5 Tm
+(Midterm demo \(Nov 3\); PM) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 280.0 Tm
+(Report 3 \(Nov 5\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 290.5 Tm
+(MVP demo-ready: annotated) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 280.0 Tm
+(bill generator,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 269.5 Tm
+(translation, subscription) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 259.0 Tm
+(tiers) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 208.0 495.0 48.0 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 242.5 Tm
+(S4) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 176.8 242.5 Tm
+(Nov 10 - Nov 23) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 242.5 Tm
+(Boot camp \(Nov 14\); PM) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 232.0 Tm
+(Report 4 \(Nov 19\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 242.5 Tm
+(Remaining features:) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 232.0 Tm
+(templates, treatment) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 221.5 Tm
+(comparison, email,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 211.0 Tm
+(reviews; harden) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 194.5 Tm
+(S5) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 176.8 194.5 Tm
+(Nov 24 - Dec 5) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 194.5 Tm
+(Pre-final \(Dec 1\);) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 184.0 Tm
+(Showcase \(Dec 5\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 194.5 Tm
+(Polish, test, docs;) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 184.0 Tm
+(near-final) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 154.0 495.0 27.0 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 167.5 Tm
+(Wrap) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 176.8 167.5 Tm
+(Dec 6 - Dec 13) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 167.5 Tm
+(Final package + PM Report) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 157.0 Tm
+(5 \(Dec 13\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 424.2 167.5 Tm
+(Technical handover) Tj
+ET
+BT
+/F2 14 Tf
+0.12 0.12 0.12 rg
+1 0 0 1 50.0 134.0 Tm
+(Sprint 1 - Foundations \(Sep 29 - Oct 12\)) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 112.0 Tm
+(*Requirement: database setup, website "kinda working", Tauri set up.*) Tj
+ET
+0.120 0.120 0.120 rg
+50.0 82.5 495.0 16.5 re f
+0 0 0 rg
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 53.0 85.5 Tm
+(Owner) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 218.0 85.5 Tm
+(Tasks) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 383.0 85.5 Tm
+(Collaborates with) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 3 0 R /Resources << /Font << /F1 13 0 R /F2 14 0 R >> >> >>
+endobj
+5 0 obj
+<< /Length 8476 >>
+stream
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 775.5 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 775.5 Tm
+(Home page; scaffold logged-in vs) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 765.0 Tm
+(logged-out shell; set up GitHub) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 754.5 Tm
+(Projects board + cards; PM Report) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 744.0 Tm
+(1; run Sprint 1 planning) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 775.5 Tm
+(Vrajesh \(auth UI <-> API contract\);) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 765.0 Tm
+(all \(roles\)) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 714.0 495.0 27.0 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 727.5 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 727.5 Tm
+(Login & registration endpoints;) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 717.0 Tm
+(session/JWT; wire terms acceptance) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 727.5 Tm
+(Nathalie \(User schema\); Mariz \(auth) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 717.0 Tm
+(forms\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 700.5 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 700.5 Tm
+(Design core schema \(Users,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 690.0 Tm
+(Sessions, Subscriptions\); first) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 679.5 Tm
+(migration; ER diagram) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 700.5 Tm
+(Vrajesh \(fields features need\)) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 639.0 495.0 37.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 663.0 Tm
+(Mathew) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 663.0 Tm
+(Set up testing framework + CI;) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 652.5 Tm
+(baseline research: customer,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 642.0 Tm
+(competitor scan) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 663.0 Tm
+(Mariz \(customer-discovery plan\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 625.5 Tm
+(Together) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 625.5 Tm
+(Tauri setup - Vrajesh leads config,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 615.0 Tm
+(Mariz verifies frontend loads,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 604.5 Tm
+(Nathalie confirms DB path) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 625.5 Tm
+(pair session) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 593.5 Tm
+(Collaboration hotspots: Auth = Mariz + Vrajesh + Nathalie \(UI <-> API <-> schema\). Tauri =) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 580.5 Tm
+(whole-team pairing.) Tj
+ET
+BT
+/F2 14 Tf
+0.12 0.12 0.12 rg
+1 0 0 1 50.0 553.5 Tm
+(Sprint 2 - Core features working \(Oct 13 - Oct 26\)) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 531.5 Tm
+(*Oct 13 progress review falls in this sprint.*) Tj
+ET
+0.120 0.120 0.120 rg
+50.0 502.0 495.0 16.5 re f
+0 0 0 rg
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 53.0 505.0 Tm
+(Owner) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 218.0 505.0 Tm
+(Tasks) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 383.0 505.0 Tm
+(Collaborates with) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 488.5 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 488.5 Tm
+(Logged-out feature pages \(each) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 478.0 Tm
+(feature explained/sold\); Profile,) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 467.5 Tm
+(Settings, Privacy pages; PM Report) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 457.0 Tm
+(2; present Oct 13 review) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 488.5 Tm
+(Vrajesh \(profile/settings data\)) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 427.0 495.0 27.0 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 440.5 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 440.5 Tm
+(Code Lookups endpoint; Bill upload) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 430.0 Tm
+(& parse endpoint \(PDF -> extract\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 440.5 Tm
+(Nathalie \(storing/caching\); Mathew) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 430.0 Tm
+(\(parse accuracy\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 413.5 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 413.5 Tm
+(Tables for bills, line items, code) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 403.0 Tm
+(cache; retention/deletion fields) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 413.5 Tm
+(Vrajesh \(upload data shape\)) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 362.5 495.0 37.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 386.5 Tm
+(Mathew) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 386.5 Tm
+(Test code lookup + upload; research) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 376.0 Tm
+(translation/medical-code sources;) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 365.5 Tm
+(start customer interviews) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 386.5 Tm
+(Vrajesh \(test cases\); Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 376.0 Tm
+(\(findings\)) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 354.5 Tm
+(Collaboration hotspots: Bill upload = Vrajesh \(logic\) + Nathalie \(storage\) + Mathew \(accuracy\).) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 341.5 Tm
+(Feature-explainer pages = Mariz + Mathew \(research feeds the "why it matters" copy\).) Tj
+ET
+BT
+/F2 14 Tf
+0.12 0.12 0.12 rg
+1 0 0 1 50.0 314.5 Tm
+(Sprint 3 - MVP demo-ready for the MIDTERM \(Oct 27 - Nov 9\)) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 292.5 Tm
+(*Highest-stakes sprint. Nov 3 = live recorded midterm. Goal: a reliable core flow to demo.*) Tj
+ET
+0.120 0.120 0.120 rg
+50.0 263.0 495.0 16.5 re f
+0 0 0 rg
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 53.0 266.0 Tm
+(Owner) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 218.0 266.0 Tm
+(Tasks) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 383.0 266.0 Tm
+(Collaborates with) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 249.5 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 249.5 Tm
+(Annotated Bill Generator UI +) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 239.0 Tm
+(Translation UI \(languages +) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 228.5 Tm
+(jargon->plain\); build the) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 218.0 Tm
+(integrated demo deck; PM Report 3;) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 207.5 Tm
+(lead rehearsal) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 249.5 Tm
+(Vrajesh \(generator/translation) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 239.0 Tm
+(APIs\)) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 156.5 495.0 48.0 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 191.0 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 191.0 Tm
+(Annotated bill generation logic;) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 180.5 Tm
+(Translation service \(Gemini:) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 170.0 Tm
+(languages + jargon->plain\);) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 159.5 Tm
+(Subscription tier gating) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 191.0 Tm
+(Nathalie \(tier data\); Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 180.5 Tm
+(\(outputs\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 143.0 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 143.0 Tm
+(Subscription tier schema;) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 132.5 Tm
+(translation/lookup caching;) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 122.0 Tm
+(reliable demo data) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 143.0 Tm
+(Vrajesh \(tier checks\)) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 71.0 495.0 48.0 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 105.5 Tm
+(Mathew) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 105.5 Tm
+(Accuracy measurement of translation) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 95.0 Tm
+(+ flags \(the "Evaluate" evidence\);) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 84.5 Tm
+(midterm test-results slide; demo) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 74.0 Tm
+(backup path) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 105.5 Tm
+(everyone - owns "does it actually) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 95.0 Tm
+(work") Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 13 0 R /F2 14 0 R >> >> >>
+endobj
+7 0 obj
+<< /Length 7730 >>
+stream
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 787.0 Tm
+(Collaboration hotspots: The demo = whole team rehearses role handoffs. Translation = Vrajesh) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 774.0 Tm
+(\(build\) + Mathew \(accuracy\) + Mariz \(present\).) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 759.0 Tm
+(Midterm reality: one 10-min integrated deck + live MVP demo. Every member explains their own) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 746.0 Tm
+(contribution. Mathew's tests + Mariz's discovery = the "Evaluate" and "Business" evidence.) Tj
+ET
+BT
+/F2 14 Tf
+0.12 0.12 0.12 rg
+1 0 0 1 50.0 719.0 Tm
+(Sprint 4 - Remaining features + hardening \(Nov 10 - Nov 23\)) Tj
+ET
+0.120 0.120 0.120 rg
+50.0 682.5 495.0 16.5 re f
+0 0 0 rg
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 53.0 685.5 Tm
+(Owner) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 218.0 685.5 Tm
+(Tasks) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 383.0 685.5 Tm
+(Collaborates with) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 669.0 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 669.0 Tm
+(Templates generator UI \(dispute) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 658.5 Tm
+(letters\); User Review system UI;) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 648.0 Tm
+(Email service UI \(send flow\); act) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 637.5 Tm
+(on midterm feedback; PM Report 4) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 669.0 Tm
+(Vrajesh \(all three APIs\)) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 597.0 495.0 37.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 621.0 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 621.0 Tm
+(Dispute templates backend; Email) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 610.5 Tm
+(service; Treatment/price comparison) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 600.0 Tm
+(logic; Review endpoints) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 621.0 Tm
+(Nathalie \(reviews + comparison) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 610.5 Tm
+(data\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 583.5 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 583.5 Tm
+(Reviews table; treatment-comparison) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 573.0 Tm
+(data model/source;) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 562.5 Tm
+(performance/indexes) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 583.5 Tm
+(Mathew \(data validation\)) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 522.0 495.0 37.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 546.0 Tm
+(Mathew) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 546.0 Tm
+(Test all new features; QA pass;) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 535.5 Tm
+(boot camp Nov 14 + Kahoot \(QA) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 525.0 Tm
+(waiver\); usability round) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 546.0 Tm
+(Mariz \(usability findings\)) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 514.0 Tm
+(Collaboration hotspots: Treatment comparison = Nathalie \(data\) + Vrajesh \(logic\) + Mathew) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 501.0 Tm
+(\(validate honesty - do not invent data\). Email = Mariz \(UI\) + Vrajesh \(send\).) Tj
+ET
+BT
+/F2 14 Tf
+0.12 0.12 0.12 rg
+1 0 0 1 50.0 474.0 Tm
+(Sprint 5 - Polish -> Pre-final & Showcase \(Nov 24 - Dec 5\)) Tj
+ET
+0.120 0.120 0.120 rg
+50.0 437.5 495.0 16.5 re f
+0 0 0 rg
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 53.0 440.5 Tm
+(Owner) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 218.0 440.5 Tm
+(Tasks) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 383.0 440.5 Tm
+(Collaborates with) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 424.0 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 424.0 Tm
+(Full UI polish; Showcase deck;) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 413.5 Tm
+(rehearse; act on Dec 3 rubric) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 424.0 Tm
+(all) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 383.5 495.0 27.0 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 397.0 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 397.0 Tm
+(Bug fixes; stability; performance;) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 386.5 Tm
+(API docs) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 397.0 Tm
+(Mathew \(defects\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 370.0 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 370.0 Tm
+(Data-integrity check; seed clean) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 359.5 Tm
+(demo data; final schema doc + ER) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 349.0 Tm
+(diagram) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 370.0 Tm
+(Vrajesh) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 308.5 495.0 37.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 332.5 Tm
+(Mathew) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 332.5 Tm
+(Final accuracy report; full) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 322.0 Tm
+(end-to-end QA; test evidence for) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 311.5 Tm
+(pre-final rubric) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 332.5 Tm
+(all) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 300.5 Tm
+(Dec 1 pre-final \(Suresh scores 100-pt rubric\) -> Dec 3 act on feedback -> Dec 5 Showcase) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 287.5 Tm
+(\(public panel; >=85% = paper waiver\).) Tj
+ET
+BT
+/F2 14 Tf
+0.12 0.12 0.12 rg
+1 0 0 1 50.0 260.5 Tm
+(Wrap-up - Technical handover \(Dec 6 - Dec 13\)) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 238.5 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 238.5 Tm
+(All: repo history + access, setup/deploy/run instructions, architecture + data docs,) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 225.5 Tm
+(testing evidence, known issues/privacy notes.) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 210.5 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 210.5 Tm
+(Nathalie: final data-model doc. Vrajesh: deployment/architecture docs. Mathew:) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 197.5 Tm
+(test/evaluation evidence. Mariz: PM Report 5 + final contribution record + presentation) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 184.5 Tm
+(artifacts.) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 169.5 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 169.5 Tm
+(Dec 13, 11:59 PM: everything due. Technical handover required even if the paper is waived.) Tj
+ET
+BT
+/F2 14 Tf
+0.12 0.12 0.12 rg
+1 0 0 1 50.0 142.5 Tm
+(Feature -> Owner quick map) Tj
+ET
+0.120 0.120 0.120 rg
+50.0 106.0 495.0 16.5 re f
+0 0 0 rg
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 53.0 109.0 Tm
+(Feature) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 135.5 109.0 Tm
+(Lead) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 218.0 109.0 Tm
+(Frontend) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 300.5 109.0 Tm
+(Backend) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 383.0 109.0 Tm
+(Data) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 465.5 109.0 Tm
+(Test/Research) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 92.5 Tm
+(Home + logged-out) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 82.0 Tm
+(feature pages) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 135.5 92.5 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 92.5 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 92.5 Tm
+(-) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 92.5 Tm
+(-) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 92.5 Tm
+(Mathew) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 82.0 Tm
+(\(copy/research\)) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 7 0 R /Resources << /Font << /F1 13 0 R /F2 14 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 10037 >>
+stream
+0.940 0.940 0.940 rg
+50.0 762.0 495.0 27.0 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 775.5 Tm
+(Login &) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 765.0 Tm
+(Registration) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 135.5 775.5 Tm
+(Vrajesh + Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 775.5 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 775.5 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 775.5 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 775.5 Tm
+(Mathew) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 748.5 Tm
+(Profile /) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 738.0 Tm
+(Settings /) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 727.5 Tm
+(Privacy) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 135.5 748.5 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 748.5 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 748.5 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 748.5 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 748.5 Tm
+(Mathew) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 708.0 495.0 16.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 711.0 Tm
+(Code Lookups) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 135.5 711.0 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 711.0 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 711.0 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 711.0 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 711.0 Tm
+(Mathew) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 694.5 Tm
+(Bill upload &) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 684.0 Tm
+(lookup) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 135.5 694.5 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 694.5 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 694.5 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 694.5 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 694.5 Tm
+(Mathew \(accuracy\)) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 654.0 495.0 27.0 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 667.5 Tm
+(Annotated Bill) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 657.0 Tm
+(Generator) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 135.5 667.5 Tm
+(Vrajesh + Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 667.5 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 667.5 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 667.5 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 667.5 Tm
+(Mathew) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 640.5 Tm
+(Translation) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 630.0 Tm
+(\(languages +) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 619.5 Tm
+(jargon\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 135.5 640.5 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 640.5 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 640.5 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 640.5 Tm
+(Nathalie \(cache\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 640.5 Tm
+(Mathew \(accuracy\)) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 589.5 495.0 27.0 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 603.0 Tm
+(Subscription) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 592.5 Tm
+(tiers) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 135.5 603.0 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 603.0 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 603.0 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 603.0 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 603.0 Tm
+(Mathew) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 576.0 Tm
+(Treatment) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 565.5 Tm
+(comparison) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 135.5 576.0 Tm
+(Nathalie +) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 135.5 565.5 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 576.0 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 576.0 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 576.0 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 576.0 Tm
+(Mathew \(honesty) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 565.5 Tm
+(check\)) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 546.0 495.0 16.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 549.0 Tm
+(Dispute templates) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 135.5 549.0 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 549.0 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 549.0 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 549.0 Tm
+(-) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 549.0 Tm
+(Mathew) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 532.5 Tm
+(Email service) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 135.5 532.5 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 532.5 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 532.5 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 532.5 Tm
+(-) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 532.5 Tm
+(Mathew) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 502.5 495.0 27.0 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 516.0 Tm
+(User review) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 505.5 Tm
+(system) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 135.5 516.0 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 218.0 516.0 Tm
+(Mariz) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 516.0 Tm
+(Vrajesh) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 383.0 516.0 Tm
+(Nathalie) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 465.5 516.0 Tm
+(Mathew) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 494.5 Tm
+(Standing rule: every feature is a 3-way handshake - Mariz \(UI\) <-> Vrajesh \(API\) <-> Nathalie) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 481.5 Tm
+(\(data\), with Mathew testing before it is "done." Agree on the API contract first so no one is) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 468.5 Tm
+(blocked.) Tj
+ET
+BT
+/F2 14 Tf
+0.12 0.12 0.12 rg
+1 0 0 1 50.0 441.5 Tm
+(Recurring cadence \(all members\)) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 419.5 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 419.5 Tm
+(Weekly team meeting \(required - each miss = -1%, up to -30%\). Fixed slot + a mid-week async) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 406.5 Tm
+(check on Discord.) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 391.5 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 391.5 Tm
+(Mariz records decisions/owners/due-dates in the Team Progress app after every meeting and) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 378.5 Tm
+(coaching session.) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 363.5 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 363.5 Tm
+(PM Reports due: Oct 8, Oct 22, Nov 5, Nov 19, Dec 13.) Tj
+ET
+BT
+/F2 14 Tf
+0.12 0.12 0.12 rg
+1 0 0 1 50.0 336.5 Tm
+(Key dates \(from the guidebook\)) Tj
+ET
+0.120 0.120 0.120 rg
+50.0 300.0 495.0 16.5 re f
+0 0 0 rg
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 53.0 303.0 Tm
+(Date) Tj
+ET
+BT
+/F2 8.5 Tf
+0.98 0.98 0.98 rg
+1 0 0 1 300.5 303.0 Tm
+(Event) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 286.5 Tm
+(Sep 29 / 30) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 286.5 Tm
+(Virtual orientation \(one session\); Sprint 1 launch) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 267.0 495.0 16.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 270.0 Tm
+(Oct 8) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 270.0 Tm
+(PM Report 1 due) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 253.5 Tm
+(Oct 13) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 253.5 Tm
+(Virtual progress review; Sprint 2 launch) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 234.0 495.0 16.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 237.0 Tm
+(Oct 22) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 237.0 Tm
+(PM Report 2 due) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 220.5 Tm
+(Oct 27) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 220.5 Tm
+(Sprint 3 begins) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 190.5 495.0 27.0 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 204.0 Tm
+(Nov 3) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 204.0 Tm
+(Recorded live virtual midterm \(50 business + 50) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 193.5 Tm
+(Capstone\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 177.0 Tm
+(Nov 5) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 177.0 Tm
+(PM Report 3 due) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 157.5 495.0 16.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 160.5 Tm
+(Nov 10) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 160.5 Tm
+(Sprint 4 begins) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 144.0 Tm
+(Nov 14) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 144.0 Tm
+(In-person entrepreneurship boot camp + Kahoot \(QA) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 133.5 Tm
+(waiver\)) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 114.0 495.0 16.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 117.0 Tm
+(Nov 19) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 117.0 Tm
+(PM Report 4 due) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 100.5 Tm
+(Nov 24) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 100.5 Tm
+(Sprint 5 begins) Tj
+ET
+0.940 0.940 0.940 rg
+50.0 81.0 495.0 16.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 84.0 Tm
+(Dec 1) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 84.0 Tm
+(Virtual pre-final) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 67.5 Tm
+(Dec 3) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 67.5 Tm
+(Pre-final scores expected) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 9 0 R /Resources << /Font << /F1 13 0 R /F2 14 0 R >> >> >>
+endobj
+11 0 obj
+<< /Length 5796 >>
+stream
+0.940 0.940 0.940 rg
+50.0 772.5 495.0 16.5 re f
+0 0 0 rg
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 775.5 Tm
+(Dec 5) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 775.5 Tm
+(Public Showcase \(>=85% panel score = paper waiver\)) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 53.0 759.0 Tm
+(Dec 13) Tj
+ET
+BT
+/F1 8.5 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 300.5 759.0 Tm
+(PM Report 5 + final package due, 11:59 PM) Tj
+ET
+BT
+/F2 14 Tf
+0.12 0.12 0.12 rg
+1 0 0 1 50.0 736.0 Tm
+(Meeting prep - Orientation \(Sep 29\)) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 714.0 Tm
+(Goal today: confirm the team can explain the idea, the roles, and the Sprint-1 plan; enter) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 701.0 Tm
+(orientation availability.) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 686.0 Tm
+(30-second pitch:) Tj
+ET
+BT
+/F1 10 Tf
+0.40 0.40 0.40 rg
+1 0 0 1 58.0 671.0 Tm
+("Candorify helps patients read their medical bills before they pay. Upload a bill, and we) Tj
+ET
+BT
+/F1 10 Tf
+0.40 0.40 0.40 rg
+1 0 0 1 58.0 658.0 Tm
+(translate the confusing codes into plain English, flag *potential discrepancies to review* -) Tj
+ET
+BT
+/F1 10 Tf
+0.40 0.40 0.40 rg
+1 0 0 1 58.0 645.0 Tm
+(duplicates, math errors, charges far above Medicare rates - and generate a dispute letter. We) Tj
+ET
+BT
+/F1 10 Tf
+0.40 0.40 0.40 rg
+1 0 0 1 58.0 632.0 Tm
+(never alter the bill or confirm errors; we surface what to question.") Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 617.0 Tm
+(Confirm today:) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 602.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 602.0 Tm
+(Roles \(as above\) - everyone agrees?) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 587.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 587.0 Tm
+(Weekly meeting day/time \(pick now\).) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 572.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 572.0 Tm
+(Enter orientation availability for BOTH options \(Tue 9/29 6-8 PM or Wed 9/30 2-3:30 PM\).) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 557.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 557.0 Tm
+(Set up the Team Progress app + Discord PM channel.) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 542.0 Tm
+(Business talking points \(Prof. Kumar's lens\):) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 527.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 527.0 Tm
+(Customer: high-deductible-plan patients who pay full price out of pocket.) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 512.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 512.0 Tm
+(Problem: bills are vague by design; itemized bills hide duplicate/arithmetic errors.) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 497.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 497.0 Tm
+(Value vs. auditors: we cover small-dollar cases auditors won't touch, cheaply.) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 482.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 482.0 Tm
+(Discovery plan \(no invented users\): who we will interview in S1-S2, how many, by when.) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 467.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 467.0 Tm
+(Current status \(be truthful\): working prototype exists \(auth, code lookup, bill upload + AI) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 454.0 Tm
+(extraction, translation, tiers, dispute templates\) = MVP baseline; remaining features) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 441.0 Tm
+(\(treatment comparison, reviews, email polish\) = this semester's roadmap.) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 426.0 Tm
+(Top risks to raise:) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 411.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 411.0 Tm
+(Accuracy of AI translation/flagging \(Mathew measures it - our "Evaluate" evidence\).) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 396.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 396.0 Tm
+(Privacy/legal \(medical data, non-HIPAA disclaimer; PII stripping + deletion\).) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 381.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 381.0 Tm
+(Scope: 11 features is a lot - sequence, don't build all at once.) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 50.0 366.0 Tm
+(Questions for orientation:) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 351.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 351.0 Tm
+(Confirmed orientation time/link?) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 336.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 336.0 Tm
+(Constraints on using AI \(Gemini\) in the product for the evidence rules?) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 321.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 321.0 Tm
+(Expected depth for the Nov 3 midterm demo?) Tj
+ET
+BT
+/F2 14 Tf
+0.12 0.12 0.12 rg
+1 0 0 1 50.0 294.0 Tm
+(Where we work) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 272.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 272.0 Tm
+(Canvas - official assignments & submissions) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 257.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 257.0 Tm
+(Discord - team + PM communication) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 242.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 242.0 Tm
+(Team Progress app \(progress.real-world-connections.com\) - sprint, meeting, contribution,) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 229.0 Tm
+(action records) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 56.0 214.0 Tm
+(-) Tj
+ET
+BT
+/F1 10 Tf
+0.15 0.15 0.15 rg
+1 0 0 1 68.0 214.0 Tm
+(GitHub - code, issues/cards, milestones) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 11 0 R /Resources << /Font << /F1 13 0 R /F2 14 0 R >> >> >>
+endobj
+13 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+14 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000141 00000 n 
+0000007725 00000 n 
+0000007863 00000 n 
+0000016391 00000 n 
+0000016529 00000 n 
+0000024311 00000 n 
+0000024449 00000 n 
+0000034539 00000 n 
+0000034678 00000 n 
+0000040527 00000 n 
+0000040667 00000 n 
+0000040738 00000 n 
+trailer
+<< /Size 15 /Root 1 0 R >>
+startxref
+40814
+%%EOF
