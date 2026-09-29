@@ -157,9 +157,15 @@
         </div>
         <div class="card">
           <h2>Editable letter</h2>
+          <label>Provider billing email (to send to)</label>
+          <input id="tpl-to" type="email" placeholder="billing@provider.example.com" />
           <label>Subject</label><input id="tpl-subject" placeholder="Generated subject appears here" />
           <label>Body</label><textarea id="tpl-body" placeholder="Generated letter appears here — edit freely before sending."></textarea>
-          <p class="notice">Copy this into your email or print it. Candorify never sends anything on your behalf.</p>
+          <div class="row" style="margin-top:12px">
+            <button class="btn primary" id="btn-send-email">✉ Send from my email</button>
+            <button class="btn ghost" id="btn-copy-letter">Copy text</button>
+          </div>
+          <p class="notice" style="margin-top:8px">“Send” opens <strong>your own email app</strong> with this letter pre-filled — the email comes from your address, and Candorify never sees or sends it. If you generated an annotated PDF, download it first and attach it in your email (browsers can’t auto-attach files).</p>
         </div>
       </div>
     </section>

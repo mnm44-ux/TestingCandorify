@@ -489,6 +489,27 @@
     el.classList.toggle("hidden");
   }
 
+  // ---------- send letter via the user's own email client (mailto) ----------
+  function sendLetterEmail() {
+    const to = ($("#tpl-to").value || "").trim();
+    const subject = $("#tpl-subject").value || "";
+    const body = $("#tpl-body").value || "";
+    if (!body) { toast("Generate a letter first.", true); return; }
+    const mailto = "mailto:" + encodeURIComponent(to) +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+    // Opens the user's default email app; the email is sent from THEIR address.
+    window.location.href = mailto;
+    toast("Opening your email app… attach the annotated PDF if you downloaded it.");
+  }
+
+  function copyLetter() {
+    const text = ($("#tpl-subject").value || "") + "\n\n" + ($("#tpl-body").value || "");
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(() => toast("Letter copied")).catch(() => toast("Copy failed", true));
+    } else { toast("Copy not supported in this browser", true); }
+  }
+
   // ---------- pricing / payments ----------
   async function renderPricing() {
     let cfg = { paid_features: [], mock_mode: true };
@@ -582,6 +603,8 @@
     $("#tc-form").addEventListener("submit", translateSingleCode);
     $("#btn-tpl-request").addEventListener("click", () => renderTemplateFor("request_itemized_bill"));
     $("#btn-tpl-dispute").addEventListener("click", () => renderTemplateFor("dispute_charge"));
+    $("#btn-send-email").addEventListener("click", sendLetterEmail);
+    $("#btn-copy-letter").addEventListener("click", copyLetter);
     $("#btn-run-accuracy").addEventListener("click", runAccuracy);
 
     // Upload flow
