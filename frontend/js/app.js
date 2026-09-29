@@ -27,12 +27,36 @@
   function isPaid() { return state.user && state.user.tier === "paid"; }
 
   // ---------- navigation ----------
+  // Everyone (free or paid) must have an account to use the tools. Only the
+  // landing page, pricing, and the auth screen are public.
+  const PUBLIC_VIEWS = new Set(["home", "pricing", "auth"]);
+
   function showView(id) {
+    // Login gate: guests are redirected to the auth screen for protected views.
+    if (!PUBLIC_VIEWS.has(id) && !API.isLoggedIn()) {
+      toast("Please create an account or log in to continue.");
+      pendingView = id;  // remember where they wanted to go
+      renderAuthPrompt(id);
+      id = "auth";
+    }
     $$(".view").forEach(v => v.classList.toggle("active", v.id === "view-" + id));
     $$("nav.top button[data-view]").forEach(b => b.classList.toggle("active", b.dataset.view === id));
     window.scrollTo({ top: 0, behavior: "smooth" });
     if (id === "pricing") renderPricing();
     if (id === "account") renderAccount();
+  }
+
+  let pendingView = null;
+
+  function renderAuthPrompt(targetView) {
+    const el = $("#auth-prompt");
+    if (!el) return;
+    const labels = {
+      review: "review a bill", lookup: "look up a billing code",
+      templates: "draft a letter", accuracy: "view accuracy", account: "view your account",
+    };
+    el.textContent = `You need a free account to ${labels[targetView] || "use this feature"}. Sign up below — it only takes a moment.`;
+    el.classList.remove("hidden");
   }
 
   // ---------- auth UI ----------
@@ -70,7 +94,11 @@
       API.setToken(res.access_token);
       await refreshUser();
       toast(isRegister ? "Account created" : "Welcome back");
-      showView("review");
+      const dest = pendingView || "review";
+      pendingView = null;
+      const prompt = $("#auth-prompt");
+      if (prompt) prompt.classList.add("hidden");
+      showView(dest);
     } catch (err) { toast(err.message, true); }
   }
 
