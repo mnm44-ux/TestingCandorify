@@ -293,6 +293,8 @@
     const system = $("#tc-system").value;
     const lang = $("#tc-lang").value;
     const out = $("#tc-result");
+    if (!code) { toast("Enter a billing code first.", true); return; }
+    if (!API.isLoggedIn()) { toast("Please log in to look up codes.", true); showView("lookup"); return; }
     out.innerHTML = `<p class="loading">Looking up…</p>`;
     try {
       const r = await API.translateCode(code, system, lang);
@@ -301,7 +303,11 @@
         <p><strong>Plain English:</strong> ${esc(r.plain_english)}</p>
         ${lang !== "en" ? `<p><strong>${esc(state.languages[lang] || lang)}:</strong> ${esc(r.translated)}</p>` : ""}
       </div>`;
-    } catch (err) { out.innerHTML = ""; toast(err.message, true); }
+    } catch (err) {
+      out.innerHTML = "";
+      if (err.status === 401) { toast("Please log in to look up codes.", true); showView("auth"); }
+      else toast(err.message, true);
+    }
   }
 
   // ---------- templates ----------
@@ -363,6 +369,18 @@
       });
     });
     return out;
+  }
+
+  function clearUpload() {
+    uploadBillId = null;
+    uploadReviewLines = [];
+    const fileInput = $("#pdf-file");
+    if (fileInput) fileInput.value = "";
+    $("#upload-status").textContent = "";
+    $("#rev-tbody").innerHTML = "";
+    $("#review-lines-card").classList.add("hidden");
+    $("#review-results-card").classList.add("hidden");
+    toast("Cleared — you can upload a different bill.");
   }
 
   async function doUpload() {
@@ -609,6 +627,7 @@
 
     // Upload flow
     $("#btn-upload").addEventListener("click", doUpload);
+    $("#btn-clear-upload").addEventListener("click", clearUpload);
     $("#btn-add-line").addEventListener("click", () => {
       uploadReviewLines.push({ code: "", code_system: "CPT", description: "", quantity: 1, unit_price: 0, line_total: 0 });
       renderRevTable();
