@@ -31,9 +31,10 @@
         <h1>Read your medical bills<br/>before you pay.</h1>
         <p class="lead">U.S. medical bills are vague by design. Candorify surfaces <strong>potential discrepancies to review</strong> — duplicate charges, arithmetic slips, and odd quantities — and translates confusing billing codes into plain English.</p>
         <div class="row" style="margin-top:22px">
-          <button class="btn primary" data-goto="review">Review a synthetic bill</button>
+          <button class="btn primary" data-goto="review">Get started — it's free</button>
           <button class="btn ghost" data-goto="pricing">See pricing</button>
         </div>
+        <p class="notice" style="margin-top:10px">Free to use — just create an account. No card required.</p>
       </div>
 
       <div class="grid cols-3">
@@ -152,6 +153,8 @@
     <section id="view-auth" class="view">
       <div class="card" style="max-width:460px;margin:0 auto">
         <h2>Log in or sign up</h2>
+        <p id="auth-prompt" class="notice hidden" style="color:var(--brand)"></p>
+        <p class="notice">Candorify is free to use — you just need an account. Paid features (line-by-line translation, Medicare comparison, dispute letters) can be unlocked anytime.</p>
         <div class="row">
           <label style="margin:0"><input type="radio" name="authmode" id="auth-mode-login" checked style="width:auto"> Log in</label>
           <label style="margin:0"><input type="radio" name="authmode" id="auth-mode-register" style="width:auto"> Sign up</label>

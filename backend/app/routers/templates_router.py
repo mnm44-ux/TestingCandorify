@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from fastapi import APIRouter, Depends, HTTPException
 
-from ..auth import get_optional_user, is_paid
+from ..auth import get_current_user, is_paid
 from ..models import User
 from ..schemas import TemplateRequest, TemplateResponse
 from ..templates_engine import available_templates, render_template
@@ -22,7 +22,7 @@ def list_templates() -> list[dict]:
 @router.post("/render", response_model=TemplateResponse)
 def render(
     payload: TemplateRequest,
-    user: User | None = Depends(get_optional_user),
+    user: User = Depends(get_current_user),
 ) -> TemplateResponse:
     if payload.template in PAID_TEMPLATES and not is_paid(user):
         raise HTTPException(

@@ -8,7 +8,7 @@ import datetime as dt
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from ..auth import get_optional_user, is_paid, require_paid
+from ..auth import get_current_user, is_paid, require_paid
 from ..checks import LineView, run_checks
 from ..checks.scoring import AnswerItem, aggregate, score_bill
 from ..config import get_settings
@@ -98,7 +98,7 @@ def _run_and_store_flags(db: Session, bill: Bill) -> None:
 def generate(
     req: GenerateRequest,
     db: Session = Depends(get_db),
-    user: User | None = Depends(get_optional_user),
+    user: User = Depends(get_current_user),
 ) -> Bill:
     gen = generate_bill(
         num_line_items=req.num_line_items,
@@ -115,7 +115,7 @@ def generate(
 def submit_bill(
     payload: BillIn,
     db: Session = Depends(get_db),
-    user: User | None = Depends(get_optional_user),
+    user: User = Depends(get_current_user),
 ) -> Bill:
     delete_after = dt.datetime.now(dt.timezone.utc) + dt.timedelta(
         days=settings.upload_retention_days
@@ -143,30 +143,51 @@ def submit_bill(
     return bill
 
 
-@router.get("/{bill_id}", response_model=BillOut)
-def get_bill(bill_id: int, db: Session = Depends(get_db)) -> Bill:
+def _get_owned_bill(db: Session, bill_id: int, user: User) -> Bill:
+    """Fetch a bill and ensure it belongs to the requesting user."""
     bill = db.get(Bill, bill_id)
-    if not bill:
+    if not bill or bill.user_id != user.id:
+        # 404 (not 403) so we don't reveal that a bill exists for another user.
         raise HTTPException(status_code=404, detail="Bill not found")
     return bill
 
 
+@router.get("/{bill_id}", response_model=BillOut)
+def get_bill(
+    bill_id: int,
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_user),
+) -> Bill:
+    return _get_owned_bill(db, bill_id, user)
+
+
 @router.post("/{bill_id}/recheck", response_model=BillOut)
-def recheck(bill_id: int, db: Session = Depends(get_db)) -> Bill:
-    bill = db.get(Bill, bill_id)
-    if not bill:
-        raise HTTPException(status_code=404, detail="Bill not found")
+def recheck(
+    bill_id: int,
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_user),
+) -> Bill:
+    bill = _get_owned_bill(db, bill_id, user)
     _run_and_store_flags(db, bill)
     return bill
 
 
 @router.patch("/flags/{flag_id}")
-def update_flag(flag_id: int, upd: FlagStatusUpdate, db: Session = Depends(get_db)) -> dict:
+def update_flag(
+    flag_id: int,
+    upd: FlagStatusUpdate,
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_user),
+) -> dict:
     valid = {s.value for s in FlagStatus}
     if upd.status not in valid:
         raise HTTPException(status_code=400, detail=f"status must be one of {sorted(valid)}")
     flag = db.get(Flag, flag_id)
     if not flag:
+        raise HTTPException(status_code=404, detail="Flag not found")
+    # Ensure the flag's bill belongs to the requesting user.
+    bill = db.get(Bill, flag.bill_id)
+    if not bill or bill.user_id != user.id:
         raise HTTPException(status_code=404, detail="Flag not found")
     # We never auto-conclude; the user explicitly confirms or dismisses.
     flag.status = upd.status
@@ -181,9 +202,7 @@ def translate_bill_lines(
     db: Session = Depends(get_db),
     user: User = Depends(require_paid),  # line-by-line translation is a paid feature
 ) -> dict:
-    bill = db.get(Bill, bill_id)
-    if not bill:
-        raise HTTPException(status_code=404, detail="Bill not found")
+    bill = _get_owned_bill(db, bill_id, user)
     svc = get_translation_service()
     out = []
     for li in bill.line_items:
@@ -209,9 +228,7 @@ def benchmark_bill(
     Every result is context for review — never a confirmed overcharge."""
     from ..benchmark import get_benchmark_service
 
-    bill = db.get(Bill, bill_id)
-    if not bill:
-        raise HTTPException(status_code=404, detail="Bill not found")
+    bill = _get_owned_bill(db, bill_id, user)
     svc = get_benchmark_service()
     lines = []
     for li in bill.line_items:
@@ -239,11 +256,13 @@ def benchmark_bill(
 
 
 @router.delete("/{bill_id}")
-def delete_bill(bill_id: int, db: Session = Depends(get_db)) -> dict:
+def delete_bill(
+    bill_id: int,
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_user),
+) -> dict:
     """One-tap deletion: removes the bill and all associated data immediately."""
-    bill = db.get(Bill, bill_id)
-    if not bill:
-        raise HTTPException(status_code=404, detail="Bill not found")
+    bill = _get_owned_bill(db, bill_id, user)
     db.delete(bill)
     db.commit()
     return {"deleted": True, "bill_id": bill_id}
@@ -254,6 +273,7 @@ def score_accuracy(
     num_bills: int = 50,
     seed: int = 12345,
     db: Session = Depends(get_db),
+    user: User = Depends(get_current_user),
 ) -> ScoreResponse:
     """Generate a labeled synthetic set and score the check engine against the
     answer keys. Reports precision / recall / false-positive rate."""
