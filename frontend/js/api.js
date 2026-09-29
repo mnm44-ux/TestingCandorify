@@ -61,7 +61,7 @@
     // Translation
     languages: () => request("/api/translate/languages", { auth: false }),
     translateCode: (code, code_system, target_language) =>
-      request("/api/translate/code", { method: "POST", auth: false, body: { code, code_system, target_language } }),
+      request("/api/translate/code", { method: "POST", body: { code, code_system, target_language } }),
 
     // Templates
     listTemplates: () => request("/api/templates"),
