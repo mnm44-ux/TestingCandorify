@@ -340,10 +340,12 @@
   let uploadReviewLines = [];
 
   function revLineRow(li, idx) {
+    const plain = li.plain_english
+      ? `<div class="muted" style="font-size:.8rem;margin-top:3px">🌐 ${esc(li.plain_english)}</div>` : "";
     return `<tr data-idx="${idx}">
       <td><input value="${esc(li.code)}" data-f="code" style="width:80px"></td>
       <td><input value="${esc(li.code_system)}" data-f="code_system" style="width:64px"></td>
-      <td><input value="${esc(li.description)}" data-f="description"></td>
+      <td><input value="${esc(li.description)}" data-f="description">${plain}</td>
       <td><input type="number" step="0.01" value="${li.quantity}" data-f="quantity" style="width:70px"></td>
       <td><input type="number" step="0.01" value="${li.unit_price}" data-f="unit_price" style="width:90px"></td>
       <td><input type="number" step="0.01" value="${li.line_total}" data-f="line_total" style="width:90px"></td>

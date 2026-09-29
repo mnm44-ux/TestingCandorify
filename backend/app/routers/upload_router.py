@@ -23,7 +23,13 @@ from ..checks import LineView, run_checks
 from ..config import get_settings
 from ..db import get_db
 from ..models import Bill, LineItem, SurveyStat, User
-from ..pdf import build_annotated_pdf, extract_text, parse_line_items, strip_pii
+from ..pdf import (
+    build_annotated_pdf,
+    extract_bill,
+    extract_text,
+    parse_line_items,
+    strip_pii,
+)
 from ..pdf.annotate import AnnotatedLine
 from ..schemas import ReviewSubmit, SurveySubmit, UploadParseResponse
 from ..translation import get_translation_service
@@ -70,24 +76,57 @@ async def upload_pdf(
     finally:
         data = b""  # drop the raw bytes immediately
 
-    parsed = parse_line_items(text)
-    pii = strip_pii(text)  # counts only; we don't keep the text
+    # Strip PII locally BEFORE anything leaves the server. Only the redacted
+    # text (medical content + hospital/provider name) is sent to Gemini.
+    pii = strip_pii(text)
+    redacted = pii.redacted_text
+
+    provider = "Uploaded Provider"
+    service_date = ""
+    stated_total = 0.0
+    lines_out: list[dict] = []
+    source = "local"
+
+    # Preferred: let Gemini extract + translate from the redacted text so the
+    # user doesn't have to type anything. Falls back to the local regex parser.
+    extracted = extract_bill(redacted)
+    if extracted is not None:
+        source = "ai"
+        provider = extracted.provider_name
+        service_date = extracted.service_date
+        stated_total = extracted.stated_total
+        lines_out = [{
+            "code": li.code, "code_system": li.code_system, "description": li.description,
+            "quantity": li.quantity, "unit_price": li.unit_price,
+            "line_total": li.line_total, "plain_english": li.plain_english,
+        } for li in extracted.line_items]
+    else:
+        parsed = parse_line_items(text)  # local text ok; nothing sent externally
+        provider = parsed.provider_name
+        lines_out = [{
+            "code": li.code, "code_system": li.code_system, "description": li.description,
+            "quantity": li.quantity, "unit_price": li.unit_price,
+            "line_total": li.line_total, "plain_english": "",
+        } for li in parsed.line_items]
+
+    notice = (
+        "We read your bill and removed personal identifiers before sending only "
+        "the medical details and hospital name to our AI provider (Google Gemini) "
+        "to extract and translate the charges. Please glance over the lines below "
+        "and correct anything that looks off before continuing."
+        if source == "ai" else
+        "AI extraction was unavailable, so we parsed your bill locally and removed "
+        "personal identifiers. Please review and correct the lines below before "
+        "continuing."
+    )
 
     return UploadParseResponse(
-        provider_name=parsed.provider_name,
-        service_date="",
-        stated_total=0.0,
-        line_items=[{
-            "code": li.code, "code_system": li.code_system, "description": li.description,
-            "quantity": li.quantity, "unit_price": li.unit_price, "line_total": li.line_total,
-        } for li in parsed.line_items],
+        provider_name=provider,
+        service_date=service_date,
+        stated_total=stated_total,
+        line_items=lines_out,
         pii_redaction_counts=pii.counts,
-        notice=(
-            "We parsed your bill locally and removed personal identifiers. Please "
-            "review and correct the lines below before continuing. Only medical "
-            "details (codes, descriptions, amounts) will be sent to our AI "
-            "translation provider (Google Gemini)."
-        ),
+        notice=notice,
     )
 
 
