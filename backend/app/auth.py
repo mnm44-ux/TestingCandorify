@@ -3,10 +3,10 @@ from __future__ import annotations
 
 import datetime as dt
 
+import bcrypt
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
-from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 
 from .config import get_settings
@@ -14,17 +14,31 @@ from .db import get_db
 from .models import Subscription, Tier, User
 
 settings = get_settings()
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login", auto_error=False)
 ALGORITHM = "HS256"
 
+# bcrypt operates on bytes and only uses the first 72 bytes of the password.
+_BCRYPT_MAX_BYTES = 72
+
+
+def _to_bytes(password: str) -> bytes:
+    return password.encode("utf-8")[:_BCRYPT_MAX_BYTES]
+
 
 def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
+    """Hash a password with bcrypt. Returns the encoded hash as a str.
+
+    Uses the `bcrypt` library directly (passlib was dropped due to its
+    incompatibility with bcrypt >= 4.1 — the 'no attribute __about__' error)."""
+    hashed = bcrypt.hashpw(_to_bytes(password), bcrypt.gensalt())
+    return hashed.decode("utf-8")
 
 
 def verify_password(plain: str, hashed: str) -> bool:
-    return pwd_context.verify(plain, hashed)
+    try:
+        return bcrypt.checkpw(_to_bytes(plain), hashed.encode("utf-8"))
+    except (ValueError, TypeError):
+        return False
 
 
 def create_access_token(subject: str) -> str:

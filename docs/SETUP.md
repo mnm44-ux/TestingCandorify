@@ -24,6 +24,7 @@ Open **http://localhost:8000/** — the FastAPI app serves the website from
 ### Run the tests
 ```bash
 cd backend
+pip install -r requirements-dev.txt   # includes pytest (prod uses requirements.txt)
 pytest -q
 ```
 
