@@ -44,7 +44,10 @@ def client():
 
 
 def _register(client, email="user@example.com", password="password123"):
-    r = client.post("/api/auth/register", json={"email": email, "password": password})
+    r = client.post(
+        "/api/auth/register",
+        json={"email": email, "password": password, "accept_terms": True},
+    )
     assert r.status_code == 201, r.text
     return r.json()["access_token"]
 

@@ -49,6 +49,8 @@ class User(Base):
     email: Mapped[str] = mapped_column(String(320), unique=True, index=True)
     hashed_password: Mapped[str] = mapped_column(String(255))
     preferred_language: Mapped[str] = mapped_column(String(8), default="en")
+    # Records that the user accepted the Terms (incl. Gemini/Google disclosure).
+    terms_accepted_at: Mapped[dt.datetime | None] = mapped_column(DateTime, nullable=True)
     created_at: Mapped[dt.datetime] = mapped_column(DateTime, default=_utcnow)
 
     subscription: Mapped["Subscription"] = relationship(
@@ -145,3 +147,24 @@ class AnswerKey(Base):
     detail: Mapped[str] = mapped_column(Text, default="")
 
     bill: Mapped["Bill"] = relationship(back_populates="answer_keys")
+
+
+
+class SurveyStat(Base):
+    """Post-review survey — PERFORMANCE STATS ONLY.
+
+    Deliberately stores NO medical content and NO personal identifiers: no
+    codes, no bill text, no names. Only aggregate performance metrics so the
+    team can measure impact. Not linked to any bill; user_id is nullable and
+    kept only so a user can't spam multiple entries per review if desired.
+    """
+
+    __tablename__ = "survey_stats"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int | None] = mapped_column(ForeignKey("users.id"), nullable=True)
+    estimated_savings: Mapped[float] = mapped_column(Float, default=0.0)
+    flags_shown: Mapped[int] = mapped_column(Integer, default=0)
+    flags_marked_helpful: Mapped[int] = mapped_column(Integer, default=0)
+    satisfaction: Mapped[int] = mapped_column(Integer, default=0)  # 1..5
+    created_at: Mapped[dt.datetime] = mapped_column(DateTime, default=_utcnow)

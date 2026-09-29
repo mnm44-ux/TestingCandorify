@@ -63,6 +63,48 @@ def test_email_uses_ai_when_available():
     assert "Could you please send an itemized bill" in t.body
 
 
+def test_email_rejects_ai_that_drops_facts():
+    # AI output omits the code/amount -> must be rejected, template kept.
+    fake = FakeLLM("Dear Team, please review my charges. Thanks.")
+    t = render_template(
+        "dispute_charge",
+        {"provider_name": "Acme", "patient_name": "Jane Doe",
+         "items": [{"code": "85025", "description": "CBC", "line_total": 60.0,
+                    "note": "please confirm"}]},
+        use_ai=True,
+        llm_client=fake,
+    )
+    # Deterministic template retained (still contains the code).
+    assert "85025" in t.body
+    assert "please review my charges" not in t.body
+
+
+def test_email_rejects_ai_that_adds_accusation():
+    # AI keeps the code but asserts an error -> forbidden, must be rejected.
+    fake = FakeLLM("Dear Team, charge 85025 for $60.00 is a billing error and fraud. Refund me.")
+    t = render_template(
+        "dispute_charge",
+        {"provider_name": "Acme", "patient_name": "Jane Doe",
+         "items": [{"code": "85025", "description": "CBC", "line_total": 60.0}]},
+        use_ai=True,
+        llm_client=fake,
+    )
+    assert "fraud" not in t.body.lower()
+    assert "not asserting that these are errors" in t.body  # template kept
+
+
+def test_email_accepts_ai_that_preserves_facts():
+    fake = FakeLLM("Dear Acme Team, could you please review charge 85025 ($60.00)? Thank you.")
+    t = render_template(
+        "dispute_charge",
+        {"provider_name": "Acme", "patient_name": "Jane Doe",
+         "items": [{"code": "85025", "description": "CBC", "line_total": 60.0}]},
+        use_ai=True,
+        llm_client=fake,
+    )
+    assert "could you please review charge 85025" in t.body
+
+
 def test_email_falls_back_to_template_when_ai_down():
     t = render_template(
         "request_itemized_bill",

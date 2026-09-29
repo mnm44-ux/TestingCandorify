@@ -1,6 +1,8 @@
 """Auth endpoints: register, login."""
 from __future__ import annotations
 
+import datetime as dt
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
@@ -21,12 +23,18 @@ def _to_user_out(user: User) -> UserOut:
 
 @router.post("/register", response_model=Token, status_code=201)
 def register(payload: UserCreate, db: Session = Depends(get_db)) -> Token:
+    if not payload.accept_terms:
+        raise HTTPException(
+            status_code=400,
+            detail="You must accept the Terms & Conditions to create an account.",
+        )
     if db.query(User).filter(User.email == payload.email).first():
         raise HTTPException(status_code=400, detail="Email already registered")
     user = User(
         email=payload.email,
         hashed_password=hash_password(payload.password),
         preferred_language=payload.preferred_language,
+        terms_accepted_at=dt.datetime.now(dt.timezone.utc),
     )
     user.subscription = Subscription(tier=Tier.free.value, active=False)
     db.add(user)

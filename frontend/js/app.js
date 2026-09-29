@@ -89,8 +89,13 @@
     const password = $("#auth-password").value;
     const lang = $("#auth-lang").value;
     const isRegister = $("#auth-mode-register").checked;
+    const acceptedTerms = $("#auth-terms") && $("#auth-terms").checked;
+    if (isRegister && !acceptedTerms) {
+      toast("Please accept the Terms & Conditions to create an account.", true);
+      return;
+    }
     try {
-      const res = isRegister ? await API.register(email, password, lang) : await API.login(email, password);
+      const res = isRegister ? await API.register(email, password, lang, acceptedTerms) : await API.login(email, password);
       API.setToken(res.access_token);
       await refreshUser();
       toast(isRegister ? "Account created" : "Welcome back");
@@ -324,6 +329,187 @@
     }
   }
 
+  // ---------- PDF upload flow ----------
+  let uploadBillId = null;
+  let uploadReviewLines = [];
+
+  function revLineRow(li, idx) {
+    return `<tr data-idx="${idx}">
+      <td><input value="${esc(li.code)}" data-f="code" style="width:80px"></td>
+      <td><input value="${esc(li.code_system)}" data-f="code_system" style="width:64px"></td>
+      <td><input value="${esc(li.description)}" data-f="description"></td>
+      <td><input type="number" step="0.01" value="${li.quantity}" data-f="quantity" style="width:70px"></td>
+      <td><input type="number" step="0.01" value="${li.unit_price}" data-f="unit_price" style="width:90px"></td>
+      <td><input type="number" step="0.01" value="${li.line_total}" data-f="line_total" style="width:90px"></td>
+      <td><button class="btn ghost sm" data-del="${idx}">✕</button></td>
+    </tr>`;
+  }
+
+  function renderRevTable() {
+    $("#rev-tbody").innerHTML = uploadReviewLines.map((li, i) => revLineRow(li, i)).join("");
+    $$("#rev-tbody button[data-del]").forEach(b => b.onclick = () => {
+      uploadReviewLines.splice(parseInt(b.dataset.del, 10), 1); renderRevTable();
+    });
+  }
+
+  function collectRevLines() {
+    const out = [];
+    $$("#rev-tbody tr").forEach(tr => {
+      const g = (f) => $(`input[data-f="${f}"]`, tr).value;
+      out.push({
+        code: g("code"), code_system: g("code_system") || "CPT", description: g("description"),
+        quantity: parseFloat(g("quantity")) || 1, unit_price: parseFloat(g("unit_price")) || 0,
+        line_total: parseFloat(g("line_total")) || 0,
+      });
+    });
+    return out;
+  }
+
+  async function doUpload() {
+    const f = $("#pdf-file").files[0];
+    if (!f) { toast("Choose a PDF first.", true); return; }
+    const btn = $("#btn-upload"); btn.disabled = true; btn.textContent = "Parsing…";
+    $("#upload-status").textContent = "";
+    try {
+      const res = await API.uploadPdf(f);
+      uploadReviewLines = res.line_items || [];
+      $("#rev-provider").value = res.provider_name || "";
+      $("#rev-date").value = res.service_date || "";
+      $("#rev-total").value = res.stated_total || "";
+      renderRevTable();
+      populateLangSelect($("#rev-lang"));
+      $("#review-lines-card").classList.remove("hidden");
+      $("#review-results-card").classList.add("hidden");
+      const redactions = Object.values(res.pii_redaction_counts || {}).reduce((a, b) => a + b, 0);
+      $("#upload-status").innerHTML = `Parsed ${uploadReviewLines.length} line(s). Removed ${redactions} personal identifier(s) before any AI translation. ${esc(res.notice)}`;
+      toast("Bill parsed — review the lines");
+    } catch (err) { toast(err.message, true); $("#upload-status").textContent = err.message; }
+    finally { btn.disabled = false; btn.textContent = "Upload & parse"; }
+  }
+
+  async function runReview() {
+    const payload = {
+      provider_name: $("#rev-provider").value || "Uploaded Provider",
+      service_date: $("#rev-date").value || "",
+      stated_total: parseFloat($("#rev-total").value) || 0,
+      line_items: collectRevLines(),
+      target_language: $("#rev-lang").value || "en",
+    };
+    if (!payload.line_items.length) { toast("Add at least one line.", true); return; }
+    try {
+      const res = await API.submitReview(payload);
+      uploadBillId = res.bill_id;
+      const flags = res.flags || [];
+      $("#upload-flags").innerHTML = flags.length
+        ? flags.map(f => `<div class="flag"><span class="kind">${esc(f.kind.replace("_", " "))}</span><div class="msg">${esc(f.message)}</div></div>`).join("")
+        : `<p class="muted">No potential discrepancies were surfaced. That doesn't guarantee the bill is correct — review each line yourself.</p>`;
+      $("#review-results-card").classList.remove("hidden");
+      toast(`Checks complete — ${flags.length} potential discrepancy(ies)`);
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    } catch (err) { toast(err.message, true); }
+  }
+
+  async function downloadAnnotated() {
+    if (!uploadBillId) return;
+    try {
+      const lang = $("#rev-lang").value || "en";
+      const blob = await API.fetchAnnotatedPdf(uploadBillId, lang);
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = "candorify-review.pdf"; a.click();
+      URL.revokeObjectURL(url);
+      toast("Annotated PDF downloaded — your original bill is unchanged");
+    } catch (err) { toast(err.message, true); }
+  }
+
+  function attachToTemplate() {
+    // Take the reviewed charges into the dispute-letter builder.
+    if (!uploadReviewLines.length) { showView("templates"); return; }
+    const first = uploadReviewLines[0];
+    showView("templates");
+    if ($("#tpl-item-code")) $("#tpl-item-code").value = first.code || "";
+    if ($("#tpl-item-desc")) $("#tpl-item-desc").value = first.description || "";
+    if ($("#tpl-provider") && $("#rev-provider")) $("#tpl-provider").value = $("#rev-provider").value;
+    toast("Download the annotated PDF and attach it when you send this letter.");
+  }
+
+  // ---------- survey + wipe ----------
+  function openSurvey(flagCount) {
+    $("#sv-helpful").value = 0;
+    $("#sv-savings").value = 0;
+    $("#sv-sat").value = 5;
+    $("#survey-overlay").classList.remove("hidden");
+  }
+  function closeSurvey() { $("#survey-overlay").classList.add("hidden"); }
+
+  async function submitSurvey(withStats) {
+    if (!uploadBillId) { closeSurvey(); return; }
+    const survey = withStats ? {
+      estimated_savings: parseFloat($("#sv-savings").value) || 0,
+      flags_shown: ($("#upload-flags").querySelectorAll(".flag") || []).length,
+      flags_marked_helpful: parseInt($("#sv-helpful").value, 10) || 0,
+      satisfaction: parseInt($("#sv-sat").value, 10) || 0,
+    } : { estimated_savings: 0, flags_shown: 0, flags_marked_helpful: 0, satisfaction: 0 };
+    try {
+      await API.finalizeUpload(uploadBillId, survey);
+      toast("Thanks! Your uploaded medical data has been permanently deleted.");
+    } catch (err) { toast(err.message, true); }
+    finally {
+      uploadBillId = null; uploadReviewLines = [];
+      closeSurvey();
+      $("#review-lines-card").classList.add("hidden");
+      $("#review-results-card").classList.add("hidden");
+      $("#pdf-file").value = "";
+      $("#upload-status").textContent = "";
+      showView("upload");
+    }
+  }
+
+  // ---------- terms text ----------
+  const TERMS_TEXT = (
+    "Candorify Terms & Conditions and Privacy Notice (summary). " +
+    "1) Candorify helps you review medical bills and flags POSSIBLE discrepancies for your review. " +
+    "It does not verify charges, confirm errors, or guarantee savings, and is not a substitute for a " +
+    "billing auditor, advocate, or legal/financial advisor. " +
+    "2) When you upload a bill, we parse it and remove personal identifiers (name, address, sex, birthdate, " +
+    "phone, email, SSN, MRN, account number) on a best-effort basis. Only MEDICAL content (codes, " +
+    "procedure descriptions, provider/hospital name, amounts) is sent to our AI provider, Google (Gemini), " +
+    "for translation. Redaction is best-effort and not guaranteed. " +
+    "3) Uploaded bill data is stored only temporarily and is permanently deleted after you finish your review " +
+    "(or automatically after the retention window). We keep only non-identifying performance statistics " +
+    "(e.g. estimated savings, satisfaction) — never your bill contents or personal information. " +
+    "4) Your original uploaded file is never modified. " +
+    "5) Candorify is NOT a HIPAA-covered entity and is not liable for any disclosure of medical information. " +
+    "By using the service you accept these terms and act on flagged items at your own responsibility. " +
+    "This is a prototype; consult a lawyer before relying on it with real patient data."
+  );
+  function toggleTerms() {
+    const el = $("#terms-text");
+    el.textContent = TERMS_TEXT;
+    el.classList.toggle("hidden");
+  }
+
+  // ---------- send letter via the user's own email client (mailto) ----------
+  function sendLetterEmail() {
+    const to = ($("#tpl-to").value || "").trim();
+    const subject = $("#tpl-subject").value || "";
+    const body = $("#tpl-body").value || "";
+    if (!body) { toast("Generate a letter first.", true); return; }
+    const mailto = "mailto:" + encodeURIComponent(to) +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+    // Opens the user's default email app; the email is sent from THEIR address.
+    window.location.href = mailto;
+    toast("Opening your email app… attach the annotated PDF if you downloaded it.");
+  }
+
+  function copyLetter() {
+    const text = ($("#tpl-subject").value || "") + "\n\n" + ($("#tpl-body").value || "");
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(() => toast("Letter copied")).catch(() => toast("Copy failed", true));
+    } else { toast("Copy not supported in this browser", true); }
+  }
+
   // ---------- pricing / payments ----------
   async function renderPricing() {
     let cfg = { paid_features: [], mock_mode: true };
@@ -417,7 +603,28 @@
     $("#tc-form").addEventListener("submit", translateSingleCode);
     $("#btn-tpl-request").addEventListener("click", () => renderTemplateFor("request_itemized_bill"));
     $("#btn-tpl-dispute").addEventListener("click", () => renderTemplateFor("dispute_charge"));
+    $("#btn-send-email").addEventListener("click", sendLetterEmail);
+    $("#btn-copy-letter").addEventListener("click", copyLetter);
     $("#btn-run-accuracy").addEventListener("click", runAccuracy);
+
+    // Upload flow
+    $("#btn-upload").addEventListener("click", doUpload);
+    $("#btn-add-line").addEventListener("click", () => {
+      uploadReviewLines.push({ code: "", code_system: "CPT", description: "", quantity: 1, unit_price: 0, line_total: 0 });
+      renderRevTable();
+    });
+    $("#btn-run-review").addEventListener("click", runReview);
+    $("#btn-download-annotated").addEventListener("click", downloadAnnotated);
+    $("#btn-attach-template").addEventListener("click", attachToTemplate);
+    $("#btn-finish-review").addEventListener("click", () => openSurvey());
+    $("#sv-submit").addEventListener("click", () => submitSurvey(true));
+    $("#sv-skip").addEventListener("click", () => submitSurvey(false));
+
+    // Terms text toggles
+    ["open-terms", "open-terms-2"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener("click", (e) => { e.preventDefault(); showView("auth"); toggleTerms(); });
+    });
 
     loadDisclaimer();
     loadLanguages();

@@ -20,6 +20,7 @@ from .routers import (
     privacy_router,
     templates_router,
     translate_router,
+    upload_router,
 )
 
 settings = get_settings()
@@ -75,6 +76,7 @@ app.include_router(translate_router.router)
 app.include_router(templates_router.router)
 app.include_router(payments_router.router)
 app.include_router(privacy_router.router)
+app.include_router(upload_router.router)
 
 # Serve the static website (mounted last so /api/* wins).
 _frontend_dir = os.path.join(os.path.dirname(__file__), "..", "..", "frontend")
