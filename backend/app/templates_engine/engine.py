@@ -12,6 +12,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from ..llm import LLMUnavailable, get_llm_client
+
 
 class _Default(dict):
     def __missing__(self, key: str) -> str:  # keep unknown placeholders visible
@@ -83,7 +85,43 @@ def _build_items_block(context: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
-def render_template(template_key: str, context: dict | None = None) -> Template:
+# Guardrails the AI MUST follow when polishing a letter. These protect the
+# product's core principle: never assert an error, never claim savings.
+_AI_GUARDRAILS = (
+    "STRICT RULES:\n"
+    "- Keep a polite, professional, non-accusatory tone.\n"
+    "- Do NOT assert that any charge is an error, fraud, or an overcharge.\n"
+    "- Do NOT promise or imply savings or a specific outcome.\n"
+    "- Only request clarification / review before payment.\n"
+    "- Keep all facts (names, dates, account number, codes, amounts) exactly as given.\n"
+    "- Return only the letter body text, no preamble or markdown."
+)
+
+
+def _ai_polish(template_key: str, base_body: str, context: dict, llm_client) -> str | None:
+    """Ask Gemini to polish the base letter. Returns the new body, or None if
+    the AI is unavailable (caller then keeps the template body)."""
+    client = llm_client if llm_client is not None else get_llm_client()
+    kind = "request for a fully itemized bill" if template_key == "request_itemized_bill" \
+        else "request for the provider to review specific charges"
+    prompt = (
+        f"Rewrite the following patient letter (a {kind}) so it reads naturally "
+        f"and personally, while preserving its meaning.\n\n{_AI_GUARDRAILS}\n\n"
+        f"LETTER TO REWRITE:\n{base_body}"
+    )
+    try:
+        text = client.generate(prompt, temperature=0.4, max_tokens=600)
+    except LLMUnavailable:
+        return None
+    return text.strip() or None
+
+
+def render_template(
+    template_key: str,
+    context: dict | None = None,
+    use_ai: bool = False,
+    llm_client=None,
+) -> Template:
     context = dict(context or {})
     tmpl = _TEMPLATES.get(template_key)
     if tmpl is None:
@@ -93,9 +131,14 @@ def render_template(template_key: str, context: dict | None = None) -> Template:
         context["items_block"] = _build_items_block(context)
 
     data = _Default(context)
-    return Template(
-        key=tmpl.key,
-        label=tmpl.label,
-        subject=tmpl.subject.format_map(data),
-        body=tmpl.body.format_map(data),
-    )
+    subject = tmpl.subject.format_map(data)
+    body = tmpl.body.format_map(data)
+
+    # Optional AI polish. The safe template is always the baseline and the
+    # fallback, so drafting never fails even if Gemini is down or unconfigured.
+    if use_ai:
+        polished = _ai_polish(template_key, body, context, llm_client)
+        if polished:
+            body = polished
+
+    return Template(key=tmpl.key, label=tmpl.label, subject=subject, body=body)

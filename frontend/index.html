@@ -99,6 +99,10 @@
           <label>Charge code</label><input id="tpl-item-code" placeholder="85025" />
           <label>Charge description</label><input id="tpl-item-desc" placeholder="Complete blood count" />
           <label>Your question / note</label><input id="tpl-item-note" placeholder="This appears twice — please confirm" />
+          <div class="row" style="margin-top:14px">
+            <input id="tpl-use-ai" type="checkbox" style="width:auto" />
+            <label for="tpl-use-ai" style="margin:0">✨ Draft with AI (Gemini) — falls back to the standard template if unavailable</label>
+          </div>
           <div class="row" style="margin-top:16px">
             <button class="btn ghost" id="btn-tpl-request">Request itemized bill (free)</button>
             <button class="btn primary" id="btn-tpl-dispute">Draft dispute letter 🔒</button>

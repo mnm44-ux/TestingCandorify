@@ -111,6 +111,7 @@ class TranslateCodeResponse(BaseModel):
 class TemplateRequest(BaseModel):
     template: str  # "request_itemized_bill" | "dispute_charge"
     context: dict = {}
+    use_ai: bool = False  # draft with Gemini when available (falls back to template)
 
 
 class TemplateResponse(BaseModel):

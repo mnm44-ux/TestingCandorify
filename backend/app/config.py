@@ -75,6 +75,17 @@ class Settings(BaseSettings):
     # Defaults to True so the prototype works in sandboxed/offline environments.
     translation_offline_only: bool = True
 
+    # Google Gemini AI (optional). When an API key is set and llm_enabled is
+    # True, Gemini is the preferred provider for translation and for drafting
+    # emails; the app still falls back to NLM/LibreTranslate/offline and to the
+    # fixed templates if Gemini is unavailable, so nothing ever breaks.
+    # Get a free key (no card) at https://aistudio.google.com/app/apikey
+    llm_provider: str = "gemini"
+    llm_api_key: str = ""
+    llm_model: str = "gemini-1.5-flash"
+    llm_base_url: str = "https://generativelanguage.googleapis.com/v1beta"
+    llm_enabled: bool = True  # honored only when llm_api_key is also set
+
     # Medicare price benchmark (CMS Physician Fee Schedule)
     cms_base_url: str = "https://data.cms.gov/data-api/v1/dataset"
     cms_code_field: str = "HCPCS_Code"

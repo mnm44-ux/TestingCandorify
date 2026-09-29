@@ -38,6 +38,7 @@ services:
       - key: CANDORIFY_PAYMENTS_MOCK_MODE
         value: "true"
       # Set these in the dashboard (Environment) when going live — do NOT commit them:
+      # CANDORIFY_LLM_API_KEY          (free Gemini key: https://aistudio.google.com/app/apikey)
       # CANDORIFY_LIBRETRANSLATE_API_KEY
       # CANDORIFY_STRIPE_SECRET_KEY
       # CANDORIFY_STRIPE_PUBLISHABLE_KEY

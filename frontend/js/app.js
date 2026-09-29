@@ -283,11 +283,13 @@
     if (kind === "dispute_charge") {
       ctx.items = [{ code: $("#tpl-item-code").value, description: $("#tpl-item-desc").value, note: $("#tpl-item-note").value || "please confirm this charge" }];
     }
+    const useAi = $("#tpl-use-ai") && $("#tpl-use-ai").checked;
     try {
-      const r = await API.renderTemplate(kind, ctx);
+      if (useAi) toast("Drafting with AI…");
+      const r = await API.renderTemplate(kind, ctx, useAi);
       $("#tpl-subject").value = r.subject;
       $("#tpl-body").value = r.body;
-      toast("Template ready — edit freely before sending");
+      toast("Letter ready — edit freely before sending");
     } catch (err) {
       if (err.status === 402) { toast("Dispute letters are a paid feature.", true); showView("pricing"); }
       else toast(err.message, true);
