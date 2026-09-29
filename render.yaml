@@ -1,0 +1,43 @@
+# Render blueprint for Candorify.
+# Deploy: push to GitHub, then in the Render dashboard choose
+# "New +" -> "Blueprint" and point it at this repo. Render reads this file.
+#
+# This runs the API + website as one Docker web service. SQLite lives on a
+# small persistent disk; for real traffic switch DATABASE_URL to a managed
+# Postgres (see docs/DEPLOY.md).
+
+services:
+  - type: web
+    name: candorify
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/health
+    autoDeploy: true
+    disk:
+      name: candorify-data
+      mountPath: /app/backend/data
+      sizeGB: 1
+    envVars:
+      - key: CANDORIFY_ENVIRONMENT
+        value: production
+      - key: CANDORIFY_SECRET_KEY
+        generateValue: true
+      - key: CANDORIFY_DATABASE_URL
+        value: sqlite:////app/backend/data/candorify.db
+      - key: CANDORIFY_UPLOAD_RETENTION_DAYS
+        value: "30"
+      # Live external services are OFF by default. Flip to false and set the
+      # keys below (as secrets in the Render dashboard) to enable them.
+      - key: CANDORIFY_TRANSLATION_OFFLINE_ONLY
+        value: "true"
+      - key: CANDORIFY_BENCHMARK_OFFLINE_ONLY
+        value: "true"
+      - key: CANDORIFY_PAYMENTS_MOCK_MODE
+        value: "true"
+      # Set these in the dashboard (Environment) when going live — do NOT commit them:
+      # CANDORIFY_LIBRETRANSLATE_API_KEY
+      # CANDORIFY_STRIPE_SECRET_KEY
+      # CANDORIFY_STRIPE_PUBLISHABLE_KEY
+      # CANDORIFY_STRIPE_PRICE_ID_PAID
+      # CANDORIFY_STRIPE_WEBHOOK_SECRET

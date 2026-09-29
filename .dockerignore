@@ -1,0 +1,31 @@
+# Version control / CI
+.git/
+.github/
+.kiro/
+
+# Python caches / envs
+**/__pycache__/
+**/*.pyc
+**/.venv/
+**/venv/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+
+# Local databases
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+
+# Secrets / local env
+**/.env
+**/*.local
+
+# Mobile build outputs (not part of the server image)
+mobile/node_modules/
+mobile/www/
+mobile/android/
+mobile/ios/
+
+# Docs & tests are not needed in the runtime image
+docs/
