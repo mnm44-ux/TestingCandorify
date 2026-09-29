@@ -32,8 +32,14 @@ For Stripe webhooks, point Stripe at `https://<your-service>/api/payments/webhoo
 
 ### Database
 
-The blueprint stores SQLite on a 1 GB persistent disk. For real traffic, create
-a **managed Postgres** on Render and set:
+On the **free tier**, Render does not support persistent disks, so the blueprint
+uses an **ephemeral SQLite** database that resets when the service restarts or
+sleeps. That is fine for a synthetic-data prototype/demo.
+
+For durable data, either upgrade the plan and add a `disk:` block back to
+`render.yaml` (mount at `/app/backend/data` and point `CANDORIFY_DATABASE_URL`
+at it), or — recommended for real traffic — create a **managed Postgres** on
+Render and set:
 
 ```
 CANDORIFY_DATABASE_URL=postgresql+psycopg://USER:PASSWORD@HOST:5432/DBNAME

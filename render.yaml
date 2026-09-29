@@ -2,9 +2,14 @@
 # Deploy: push to GitHub, then in the Render dashboard choose
 # "New +" -> "Blueprint" and point it at this repo. Render reads this file.
 #
-# This runs the API + website as one Docker web service. SQLite lives on a
-# small persistent disk; for real traffic switch DATABASE_URL to a managed
-# Postgres (see docs/DEPLOY.md).
+# This runs the API + website as one Docker web service.
+#
+# NOTE ON DATA PERSISTENCE:
+# The free tier does NOT support persistent disks, so this blueprint uses an
+# ephemeral SQLite database that resets when the service restarts/sleeps. That
+# is fine for a prototype/demo (data is synthetic anyway). For durable storage,
+# either (a) upgrade the plan and re-add a `disk:` block, or (b) attach a
+# managed Postgres and set CANDORIFY_DATABASE_URL accordingly (see docs/DEPLOY.md).
 
 services:
   - type: web
@@ -14,17 +19,14 @@ services:
     plan: free
     healthCheckPath: /api/health
     autoDeploy: true
-    disk:
-      name: candorify-data
-      mountPath: /app/backend/data
-      sizeGB: 1
     envVars:
       - key: CANDORIFY_ENVIRONMENT
         value: production
       - key: CANDORIFY_SECRET_KEY
         generateValue: true
+      # Ephemeral SQLite in the container working dir (free tier has no disk).
       - key: CANDORIFY_DATABASE_URL
-        value: sqlite:////app/backend/data/candorify.db
+        value: sqlite:///./candorify.db
       - key: CANDORIFY_UPLOAD_RETENTION_DAYS
         value: "30"
       # Live external services are OFF by default. Flip to false and set the
