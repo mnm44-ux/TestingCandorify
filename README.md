@@ -29,6 +29,8 @@ Candorify helps patients review itemized medical bills, surfacing **potential di
 - **Check engine** — duplicate / arithmetic / quantity detection. Reports precision, recall, false-positive and false-negative rates against the answer key. Target: ≥95% recall, <5% false-positive rate.
 - **Translation** — billing codes → plain English → other languages. Every line explained.
 - **Template engine** — editable "request itemized bill" and "dispute a charge" letters.
+- **PDF upload** — upload a real bill PDF; it's parsed locally, personal identifiers are stripped, and only medical content is sent to Gemini for translation. A **new annotated PDF** (translations + flags) is generated for download — the original is never modified.
+- **Ephemeral medical data** — uploaded bill data is deleted after a post-review survey (stats-only) or the retention window. Terms acceptance (incl. Gemini/Google disclosure) is required at signup.
 - **Account required** — everyone (free or paid) must create an account to use the tools; the landing page and pricing are public. Enforced on both the frontend and the API.
 - **Tiered access** — free tier (request bill + duplicate/arithmetic checks); paid tier (line-by-line translation, Medicare rate comparison, dispute letters).
 - **Payments** — Stripe test-mode checkout.

@@ -41,8 +41,8 @@
     disclaimer: () => request("/api/disclaimer", { auth: false }),
 
     // Auth
-    register: (email, password, preferred_language) =>
-      request("/api/auth/register", { method: "POST", auth: false, body: { email, password, preferred_language } }),
+    register: (email, password, preferred_language, accept_terms) =>
+      request("/api/auth/register", { method: "POST", auth: false, body: { email, password, preferred_language, accept_terms } }),
     login: (email, password) =>
       request("/api/auth/login", { method: "POST", auth: false, form: { username: email, password } }),
     me: () => request("/api/auth/me"),
@@ -76,6 +76,34 @@
     // Privacy
     privacyPolicy: () => request("/api/privacy/policy", { auth: false }),
     deleteMe: () => request("/api/privacy/me", { method: "DELETE" }),
+
+    // PDF upload / review / finalize
+    uploadPdf: (fileInput) => {
+      const fd = new FormData();
+      fd.append("file", fileInput);
+      const headers = {};
+      if (getToken()) headers["Authorization"] = "Bearer " + getToken();
+      return fetch(API_BASE + "/api/upload/pdf", { method: "POST", headers, body: fd })
+        .then(async (res) => {
+          const t = await res.text();
+          const d = t ? JSON.parse(t) : null;
+          if (!res.ok) throw new Error((d && d.detail) || "Upload failed");
+          return d;
+        });
+    },
+    submitReview: (payload) => request("/api/upload/review", { method: "POST", body: payload }),
+    fetchAnnotatedPdf: (billId, lang) => {
+      const headers = {};
+      if (getToken()) headers["Authorization"] = "Bearer " + getToken();
+      return fetch(API_BASE + "/api/upload/" + billId + "/annotated.pdf?target_language=" +
+        encodeURIComponent(lang || "en"), { headers })
+        .then(async (res) => {
+          if (!res.ok) throw new Error("Could not generate the annotated PDF");
+          return res.blob();
+        });
+    },
+    finalizeUpload: (billId, survey) =>
+      request("/api/upload/" + billId + "/finalize", { method: "POST", body: survey }),
   };
 
   global.CandorifyAPI = API;

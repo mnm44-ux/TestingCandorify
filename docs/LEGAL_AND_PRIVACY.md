@@ -18,10 +18,25 @@ discrepancy to review."** Candorify **never** auto-concludes that an error
 exists. The user explicitly **confirms** (for follow-up) or **dismisses** each
 flag; nothing is marked as a verified error or a guaranteed saving.
 
-## Prototype data policy
+## Uploaded bills (real PDFs)
 
-- **Synthetic data only.** The prototype generates synthetic itemized bills and
-  never ingests real patient data. All bills carry `is_synthetic = true`.
+- **Local parsing + PII stripping.** Uploaded PDFs are parsed on the server; the
+  raw bytes are read in memory and never written to disk. Personal identifiers
+  (name, address, sex, birthdate, phone, email, SSN, MRN, account number) are
+  removed on a best-effort basis before any external call.
+- **Hybrid AI translation.** Only medical content (codes, descriptions, provider
+  name, amounts) is sent to Google (Gemini) for translation. This is disclosed in
+  the Terms the user must accept at signup. Redaction is best-effort, not a guarantee.
+- **Original never modified.** A separate, newly generated annotated PDF is
+  produced for the user to download and share.
+- **Ephemeral.** Uploaded bill data (`is_synthetic = false`) is permanently
+  deleted when the user finishes the review (survey submit) or by the retention
+  sweep. Only non-identifying performance stats are retained (`SurveyStat`).
+
+## Synthetic demo data
+
+- The demo bill generator produces synthetic itemized bills (`is_synthetic = true`)
+  with no real patient data, used for trying the app and for accuracy testing.
 - Because the patient uploads their own bill, this prototype is **not a HIPAA
   covered entity**. This is not legal advice; validate with counsel before
   handling real data.

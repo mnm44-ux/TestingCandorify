@@ -20,10 +20,16 @@ def policy() -> dict:
     return {
         "retention_days": settings.upload_retention_days,
         "summary": (
-            "Candorify uses synthetic bills only in this prototype and never stores "
-            "real patient data. Uploads are minimized, encrypted in transit in "
-            "production, auto-deleted after the retention window, and can be removed "
-            "instantly with one-tap deletion. We never sell or share your data."
+            "When you upload a bill, Candorify parses it and removes personal "
+            "identifiers (name, address, sex, birthdate, phone, email, SSN, MRN, "
+            "account number) on a best-effort basis. Only medical content (codes, "
+            "descriptions, provider name, amounts) is sent to our AI provider "
+            "(Google Gemini) for translation. Your original file is never modified. "
+            "Uploaded data is minimized, encrypted in transit in production, and "
+            "permanently deleted after you finish your review (or automatically "
+            "after the retention window). We keep only non-identifying performance "
+            "statistics — never your bill contents or personal information — and we "
+            "never sell or share your data. Candorify is not a HIPAA-covered entity."
         ),
     }
 

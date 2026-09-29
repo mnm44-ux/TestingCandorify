@@ -9,6 +9,7 @@ class UserCreate(BaseModel):
     email: EmailStr
     password: str = Field(min_length=6)
     preferred_language: str = "en"
+    accept_terms: bool = False  # must be True to register
 
 
 class UserOut(BaseModel):
@@ -118,6 +119,42 @@ class TemplateResponse(BaseModel):
     template: str
     subject: str
     body: str
+
+
+# ---- PDF upload / review ----
+class ParsedLineOut(BaseModel):
+    code: str
+    code_system: str
+    description: str
+    quantity: float
+    unit_price: float
+    line_total: float
+
+
+class UploadParseResponse(BaseModel):
+    provider_name: str
+    service_date: str = ""
+    stated_total: float = 0.0
+    line_items: list[ParsedLineOut]
+    pii_redaction_counts: dict[str, int] = {}
+    notice: str
+
+
+class ReviewSubmit(BaseModel):
+    """User-reviewed/corrected lines to run checks + build the annotated PDF."""
+    provider_name: str = "Uploaded Provider"
+    service_date: str = ""
+    stated_total: float = 0.0
+    line_items: list[LineItemIn] = []
+    target_language: str = "en"
+
+
+# ---- Survey (stats only) ----
+class SurveySubmit(BaseModel):
+    estimated_savings: float = 0.0
+    flags_shown: int = 0
+    flags_marked_helpful: int = 0
+    satisfaction: int = Field(default=0, ge=0, le=5)
 
 
 # ---- Accuracy scoring ----

@@ -13,7 +13,8 @@
       <div class="brand"><span class="dot"></span> Candorify</div>
       <nav class="top">
         <button data-view="home" class="active">Home</button>
-        <button data-view="review">Review a bill</button>
+        <button data-view="upload">Upload a bill</button>
+        <button data-view="review">Try a demo bill</button>
         <button data-view="lookup">Code lookup</button>
         <button data-view="templates">Templates</button>
         <button data-view="pricing">Pricing</button>
@@ -50,6 +51,51 @@
 
       <div class="disclaimer" style="margin-top:20px">
         <strong>Important:</strong> <span class="disclaimer-text">Loading disclaimer…</span>
+      </div>
+    </section>
+
+    <!-- UPLOAD -->
+    <section id="view-upload" class="view">
+      <div class="card">
+        <h2>Upload your bill (PDF)</h2>
+        <p class="notice">We parse your bill <strong>on our server</strong> and remove personal identifiers (name, address, DOB, etc.). Only medical details — codes, descriptions, amounts — are sent to our AI provider (Google Gemini) to translate. Your <strong>original PDF is never changed</strong>, and all uploaded data is deleted after you finish. See the <a href="#" id="open-terms-2">Terms</a>.</p>
+        <div class="row" style="margin-top:12px">
+          <input id="pdf-file" type="file" accept="application/pdf" style="width:auto" />
+          <button class="btn primary" id="btn-upload">Upload &amp; parse</button>
+        </div>
+        <div id="upload-status" class="notice" style="margin-top:8px"></div>
+      </div>
+
+      <div id="review-lines-card" class="card hidden" style="margin-top:18px">
+        <h2>Review the parsed charges</h2>
+        <p class="notice">Bills vary a lot, so please check these lines and fix anything wrong before we run the checks. You can edit any field.</p>
+        <div class="row">
+          <div><label>Provider</label><input id="rev-provider" /></div>
+          <div><label>Service date</label><input id="rev-date" placeholder="2026-05-14" /></div>
+          <div><label>Stated total ($)</label><input id="rev-total" type="number" step="0.01" style="width:140px" /></div>
+        </div>
+        <table style="margin-top:12px"><thead><tr>
+          <th>Code</th><th>Sys</th><th>Description</th><th class="num">Qty</th><th class="num">Unit</th><th class="num">Total</th><th></th>
+        </tr></thead><tbody id="rev-tbody"></tbody></table>
+        <div class="row" style="margin-top:10px">
+          <button class="btn ghost sm" id="btn-add-line">+ Add line</button>
+          <div class="spacer"></div>
+          <label style="margin:0">Translate to</label>
+          <select id="rev-lang" style="width:auto"></select>
+          <button class="btn primary" id="btn-run-review">Run checks</button>
+        </div>
+      </div>
+
+      <div id="review-results-card" class="card hidden" style="margin-top:18px">
+        <h2>Potential discrepancies to review</h2>
+        <p class="notice">These are <strong>possible</strong> issues for you to confirm or dismiss — never confirmed errors.</p>
+        <div id="upload-flags"></div>
+        <div class="row" style="margin-top:14px">
+          <button class="btn primary" id="btn-download-annotated">⬇ Download annotated PDF</button>
+          <button class="btn ghost" id="btn-attach-template">✉ Use in a letter to my provider</button>
+          <button class="btn ghost" id="btn-finish-review">Finish &amp; clear my data</button>
+        </div>
+        <p class="notice" style="margin-top:8px">The annotated PDF is a <strong>new</strong> document — your original bill is untouched. Attach it to your email when you contact your provider.</p>
       </div>
     </section>
 
@@ -167,8 +213,18 @@
           <label>Email</label><input id="auth-email" type="email" required placeholder="you@example.com" />
           <label>Password</label><input id="auth-password" type="password" required minlength="6" placeholder="••••••" />
           <label>Preferred language</label><select id="auth-lang"></select>
+          <div id="terms-block" class="row" style="margin-top:14px;align-items:flex-start">
+            <input id="auth-terms" type="checkbox" style="width:auto;margin-top:4px" />
+            <label for="auth-terms" style="margin:0;font-size:.82rem">
+              I agree to the <a href="#" id="open-terms">Terms &amp; Conditions and Privacy Notice</a>,
+              including that bill contents I upload are sent to Google (Gemini) for translation, that
+              uploaded data is deleted after my session, and that Candorify is not a HIPAA-covered
+              entity and is not liable for data disclosure.
+            </label>
+          </div>
           <button class="btn primary" type="submit" style="margin-top:16px;width:100%">Continue</button>
         </form>
+        <div id="terms-text" class="notice hidden" style="margin-top:14px;max-height:220px;overflow:auto;border:1px solid var(--border);border-radius:10px;padding:12px"></div>
       </div>
     </section>
 
@@ -188,6 +244,24 @@
       <p>© 2026 Candorify · Prototype · Synthetic data only.</p>
     </div>
   </footer>
+
+  <!-- Survey modal -->
+  <div id="survey-overlay" class="hidden" style="position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:90;display:flex;align-items:center;justify-content:center;padding:20px">
+    <div class="card" style="max-width:480px;width:100%">
+      <h2>Quick survey</h2>
+      <p class="notice">Before we clear your data, help us measure impact. We store <strong>only these stats</strong> — never your bill or personal info.</p>
+      <label>Estimated money you might save ($)</label>
+      <input id="sv-savings" type="number" step="0.01" value="0" />
+      <label>How many flags were helpful?</label>
+      <input id="sv-helpful" type="number" min="0" value="0" />
+      <label>Overall satisfaction (1–5)</label>
+      <input id="sv-sat" type="number" min="1" max="5" value="5" />
+      <div class="row" style="margin-top:16px">
+        <button class="btn primary" id="sv-submit">Submit &amp; permanently delete my data</button>
+        <button class="btn ghost" id="sv-skip">Skip &amp; delete</button>
+      </div>
+    </div>
+  </div>
 
   <div id="toast"></div>
 
