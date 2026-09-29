@@ -58,7 +58,7 @@
     <section id="view-upload" class="view">
       <div class="card">
         <h2>Upload your bill (PDF)</h2>
-        <p class="notice">We parse your bill <strong>on our server</strong> and remove personal identifiers (name, address, DOB, etc.). Only medical details — codes, descriptions, amounts — are sent to our AI provider (Google Gemini) to translate. Your <strong>original PDF is never changed</strong>, and all uploaded data is deleted after you finish. See the <a href="#" id="open-terms-2">Terms</a>.</p>
+        <p class="notice">We read your bill <strong>on our server</strong> and remove personal identifiers (name, address, DOB, etc.) <strong>before</strong> sending only the medical details and hospital name to our AI (Google Gemini), which <strong>extracts and translates the charges for you automatically</strong> — no typing needed. Just glance over the results and fix anything that looks off. Your <strong>original PDF is never changed</strong>, and all uploaded data is deleted after you finish. See the <a href="#" id="open-terms-2">Terms</a>.</p>
         <div class="row" style="margin-top:12px">
           <input id="pdf-file" type="file" accept="application/pdf" style="width:auto" />
           <button class="btn primary" id="btn-upload">Upload &amp; parse</button>

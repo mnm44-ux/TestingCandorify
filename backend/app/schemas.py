@@ -129,6 +129,7 @@ class ParsedLineOut(BaseModel):
     quantity: float
     unit_price: float
     line_total: float
+    plain_english: str = ""
 
 
 class UploadParseResponse(BaseModel):
