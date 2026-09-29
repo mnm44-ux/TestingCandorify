@@ -98,9 +98,52 @@ _AI_GUARDRAILS = (
 )
 
 
+import re
+
+# Phrases that would indicate the AI asserted an error / promised savings —
+# forbidden by policy. If the polished letter contains any, we reject it.
+_FORBIDDEN_PHRASES = (
+    "overcharge", "overcharged", "fraud", "fraudulent", "you owe me",
+    "refund me", "you must refund", "this is an error", "billing error",
+    "you made an error", "guarantee", "guaranteed savings",
+)
+
+
+def _facts_to_preserve(base_body: str, context: dict) -> list[str]:
+    """Collect the concrete facts (codes + dollar amounts) that MUST survive an
+    AI rewrite unchanged."""
+    facts: set[str] = set()
+    # Dollar amounts present in the deterministic letter.
+    facts.update(re.findall(r"\$[\d,]+\.\d{2}", base_body))
+    # Codes and amounts from the dispute items.
+    for it in (context.get("items") or []):
+        code = str(it.get("code", "")).strip()
+        if code:
+            facts.add(code)
+        amount = it.get("line_total")
+        if isinstance(amount, (int, float)):
+            facts.add(f"${amount:,.2f}")
+    return [f for f in facts if f]
+
+
+def _ai_output_is_safe(polished: str, facts: list[str]) -> bool:
+    """Reject the AI text if it dropped a required fact or added a forbidden
+    (accusatory / savings) claim. This ENFORCES the guarantee in code rather
+    than trusting the prompt alone."""
+    low = polished.lower()
+    if any(p in low for p in _FORBIDDEN_PHRASES):
+        return False
+    # Every code / amount from the original must still be present verbatim.
+    for fact in facts:
+        if fact not in polished:
+            return False
+    return True
+
+
 def _ai_polish(template_key: str, base_body: str, context: dict, llm_client) -> str | None:
-    """Ask Gemini to polish the base letter. Returns the new body, or None if
-    the AI is unavailable (caller then keeps the template body)."""
+    """Ask Gemini to polish the base letter. Returns the new body ONLY if it
+    passes fact-preservation + safety checks; otherwise None so the caller keeps
+    the deterministic template."""
     client = llm_client if llm_client is not None else get_llm_client()
     kind = "request for a fully itemized bill" if template_key == "request_itemized_bill" \
         else "request for the provider to review specific charges"
@@ -113,7 +156,14 @@ def _ai_polish(template_key: str, base_body: str, context: dict, llm_client) -> 
         text = client.generate(prompt, temperature=0.4, max_tokens=600)
     except LLMUnavailable:
         return None
-    return text.strip() or None
+    text = text.strip()
+    if not text:
+        return None
+    # Enforce the guarantee: verify no facts were altered/dropped and no
+    # forbidden claims were introduced. If it fails, discard the AI version.
+    if not _ai_output_is_safe(text, _facts_to_preserve(base_body, context)):
+        return None
+    return text
 
 
 def render_template(
